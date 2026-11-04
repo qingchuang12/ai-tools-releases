@@ -1,6 +1,6 @@
 # AI-Tools
 
-**One panel for your whole AI toolchain.** AI-Tools gathers the MCP servers and Agent Skills scattered across every AI coding client into a single desktop app — browse, install, edit, debug, back up, and sync them from one place.
+**One panel for your whole AI toolchain.** AI-Tools brings every MCP server and Agent Skill from every AI coding client you use into one desktop app — discover it, install it, edit it, debug it, roll it back and sync it, without hand-editing another config file.
 
 <p align="center">
   <a href="https://www.ywhome.top">Official website</a> ·
@@ -9,46 +9,65 @@
   <a href="https://github.com/qingchuang12/ai-tools-releases/issues">Issue reports</a>
 </p>
 
-> **What this repository is.** It is the official **release-artifact feed** for AI-Tools: installers for Windows / macOS / Linux plus the update manifests the app reads for in-app auto-update. It holds no source code.
-> **Product homepage, feature tour and licence purchase: <https://www.ywhome.top>**
+<p align="center">
+  <strong>English</strong> ·
+  <a href="./README.zh.md">简体中文</a> ·
+  <a href="./README.ar.md">العربية</a> ·
+  <a href="./README.de.md">Deutsch</a> ·
+  <a href="./README.es.md">Español</a> ·
+  <a href="./README.fr.md">Français</a> ·
+  <a href="./README.it.md">Italiano</a> ·
+  <a href="./README.ja.md">日本語</a> ·
+  <a href="./README.ru.md">Русский</a>
+</p>
 
-**Languages:** English · [简体中文](#简体中文) · [العربية](#العربية) · [Deutsch](#deutsch) · [Español](#español) · [Français](#français) · [Italiano](#italiano) · [日本語](#日本語) · [Русский](#русский)
+> **This repository** is the official release-artifact feed for AI-Tools: installers for Windows / macOS / Linux plus the update manifests the app reads for in-app auto-update. It contains no source code.
+> **Product tour, feature list and licence purchase: <https://www.ywhome.top>**
 
 ---
 
-## English
+## The capability, in one line
 
-### 1. What AI-Tools does
+**31 MCP configuration entries and 19 Skills targets managed as a single inventory** — Cursor, VS Code, Claude Code, Gemini CLI, Codex CLI, Windsurf, Zed, TRAE (CN / SOLO / plugin), Kiro, OpenCode, JetBrains IDEs, Antigravity, OpenClaw, CodeBuddy, WorkBuddy, Qoder, ZCode, Cline, Qwen Code, iFlow CLI, LM Studio, OpenHands, GitHub Copilot CLI, Warp, Kimi Code CLI, Kilo Code, Goose, plus the cloud-storage entry. Detection is probed on your machine, and any client not on the list can be added by pointing at its config path.
 
-Every AI coding client keeps its MCP configuration in its own file, in its own format, in its own directory. Keeping those consistent by hand is error-prone busywork — and that is exactly what AI-Tools removes. It is a cross-platform Electron desktop app (Windows / macOS / Linux) that reads and writes the real config files of the clients you actually have installed, and adds a store, a debugger, a versioned history and an optional cloud sync on top.
+## Why it is worth your time
 
-AI-Tools is a proprietary derivative of the open-source **mcp-dock** project; the portions inherited from it remain under the original MIT licence, reproduced in the `THIRD_PARTY_LICENSES.md` that ships inside the app.
-
-### 2. Feature overview
-
-| Area | What you get |
+| The daily friction | What AI-Tools gives you |
 | --- | --- |
-| **MCP store** | Browse and search MCP servers across multiple sources (Smithery, npm registry, Alibaba Bailian offline index, ModelScope, the official MCP registry snapshot), with categories, real totals and server-side pagination. Disk-cached SWR lists: the first screen renders instantly, refreshes happen in the background. |
-| **Skills store** | Discover and install Agent Skills, compatible with the `~/.agents/skills/` convention. Search, categories, sorting, source filters, pagination; the install button is disabled with a reason on clients that cannot take skills. |
-| **One-click install, many clients** | Write one server or skill into several clients at once (e.g. Cursor + VS Code + Claude Code). Uninstall or update per client. Manual edits are flagged so a store update never overwrites your local tuning. |
-| **MCP Inspector** | Built-in JSON-RPC debugger over **stdio / streamable-http / sse**. List Tools, Resources and Prompts, call any tool with arguments from a form, read the result with JSON highlighting, and watch the process log in a resizable panel. |
-| **Library** | Everything you installed, in one list: edit command / args / env, batch-sync to many clients, uninstall. For skills: view and **edit SKILL.md online** (frontmatter and body), manage attached files, **import** from `.zip` / `.skill` / a folder / a pasted GitHub link / drag-and-drop, **export** several skills into one zip, and run conflict detection before any cloud push. |
-| **Multi-client sync** | Client detection is fully probe-driven — only clients present on your machine are listed. Shared physical directories are de-duplicated so nothing is written twice. |
-| **Cloud sync** | Push your MCP and Skills configuration to **your own** remote — Git (SSH key / HTTPS token / anonymous) or SFTP (password / key). Background task queue with live progress and retry, an explicit local-vs-remote consistency diff, and credentials stored only as encrypted SecretStore references. |
-| **History & rollback** | Every install, uninstall, update, sync and edit is backed up. Diff any snapshot against the current state (added / removed / changed, colour-coded), restore any version in one click, or clear the history. |
-| **Runtime probes** | Detects Node.js, Python and Git — presence, version, path — to explain "installed but it will not start". |
-| **Look & language** | Light / dark / follow-system themes with native window chrome, and **9 UI languages**: English, 简体中文, العربية (RTL), Deutsch, Español, Français, Italiano, 日本語, Русский. Language packs load on demand and switching is instant. |
-| **Security** | Local cache encrypted with AES-256-GCM (key derived from machine characteristics); external links restricted to http/https and opened in your browser; DNS-over-HTTPS to dodge polluted resolvers; single-instance lock; strict main / preload / renderer isolation behind an allow-list of IPC channels. |
+| One MCP server, six JSON files, six different key names | **Write once, deploy to many.** A single click fans the config out to every client you select, each in its own dialect — JSON / JSONC / TOML, `servers` vs `mcpServers`, `working_directory` vs `cwd`, `transport` vs `type`, `context_servers`, `mcp_servers`. |
+| Store pages that spin while you wait | **Instant first screen.** Disk-cached SWR lists render before the network answers and refresh silently in the background (list 1 h, detail 24 h), with a force-refresh whenever you ask. |
+| "Did that edit just break my client?" | **Every change is reversible.** Installs, uninstalls, updates, syncs and edits are backed up automatically; diff any snapshot against live state (added / removed / changed, colour-coded) and restore in one click. |
+| Debugging an MCP server with curl and a text editor | **Inspector built in.** Call Tools, Resources and Prompts over stdio / streamable-http / sse from a form, read highlighted JSON results, watch the process log in a resizable panel. |
+| Rebuilding your whole setup on a new machine | **Your own cloud, one-click restore.** Push MCP and Skills config to Git (SSH key / HTTPS token / anonymous) or SFTP (password / key) through a background task queue with live progress and retry, guarded by an explicit local-vs-remote consistency diff. |
+| Skills you can only touch from a terminal | **A real skills workflow.** Edit SKILL.md frontmatter and body in-app, manage attached files, import `.zip` / `.skill` / a folder / a pasted GitHub link / drag-and-drop, export several skills as one zip, with conflict detection before any cloud push. |
+| A config manager that phones home | **Local-first by default.** Nothing leaves the machine until you configure cloud sync yourself; cache encrypted with AES-256-GCM, remote credentials kept only as encrypted SecretStore references, external links restricted to http/https. |
+| Paywall surprises after install | **No feature hostage-taking.** Store, install, Inspector, library, history and multi-client sync all work without activation — only cloud sync is entitlement-gated, and a fresh install gets a 60-day trial. |
 
-### 3. Supported clients and config formats
+## Core features
 
-**31 MCP configuration entries and 19 Skills targets**, counting the built-in clients plus the cloud-storage entry (27 distinct products). Detection is probed on your machine, and you can add a custom client by pointing at any MCP config path and skills directory.
+**MCP store** — browse and search servers across Smithery, the npm registry, the Alibaba Bailian offline index (251 entries, no network needed), ModelScope and the official MCP registry snapshot. Categories, real totals, server-side pagination — the same behaviour as the upstream web.
 
-Format differences are handled for you: VS Code uses `servers` rather than `mcpServers`, Warp uses `working_directory` rather than `cwd`, Kimi Code CLI uses `transport` rather than `type`, Zed uses `context_servers`, and Codex CLI writes a TOML `mcp_servers` section. Covered clients include Cursor, VS Code, Claude Code, Gemini CLI, Codex CLI, Windsurf, Zed, TRAE (and CN / SOLO / plugin), Kiro, OpenCode, JetBrains IDEs, Antigravity, OpenClaw, CodeBuddy, WorkBuddy, Qoder, ZCode, Cline, Qwen Code, iFlow CLI, LM Studio, OpenHands, GitHub Copilot CLI, Warp, Kimi Code CLI, Kilo Code and Goose.
+**Skills store** — discover and install Agent Skills, compatible with the `~/.agents/skills/` convention. Search, category filters that follow the UI language, sorting, source facets, pagination and page-size control; install-status badges refresh themselves. On clients that cannot take skills the button is disabled *with a reason*, so no empty `.source.json` shells are ever produced.
 
-### 4. What lives in this repository
+**One-click deploy** — install to several clients at once, uninstall or update per client, and flag manual edits so a store update never overwrites your local tuning. Sources can be switched per request, and connections are managed in Settings with a real per-platform connectivity test.
 
-Releases carry the built binaries and the update manifests; nothing else. For each version you will find:
+**MCP Inspector** — an interactive JSON-RPC debugger: custom command, args, env and headers; Tools / Resources / Prompts discovery; direct tool invocation with typed arguments; child processes are reclaimed on exit so nothing lingers.
+
+**Library** — everything installed, in one place: edit command / args / env, batch-select and sync to many clients, uninstall. The Skills tab adds online SKILL.md editing, attachment management, import from archive / folder / GitHub link / drag-and-drop, bulk zip export and cloud conflict resolution (overwrite or skip, per item).
+
+**Cloud sync** — Git or SFTP to your own remote, automatic pull at startup, manual push, a task panel with progress and one-click retry, and a consistency check that shows both sides before anything is overwritten.
+
+**History & rollback** — timestamped backups showing size, clients and entry counts; version-to-version diff; one-click restore; full history clear.
+
+**Runtime probes** — Node.js, Python and Git detection (presence, version, path) to answer "installed but it will not start".
+
+**Platform sources & API tokens** — built-in and platform-direct sources managed side by side (base URL + token), enable/disable, default, export, plus a token centre with scoped (`skills:read`, `skills:download`, `models:read`, `models:download`, `admin`) and expiring credentials.
+
+**Look & language** — light / dark / follow-system themes with native window chrome, and **9 UI languages**: English, 简体中文, العربية (full RTL), Deutsch, Español, Français, Italiano, 日本語, Русский. Language packs load on demand; switching is instant.
+
+**Security engineering** — AES-256-GCM encrypted cache keyed on machine characteristics, http/https-only external links opened in your browser, DNS-over-HTTPS against polluted resolvers, single-instance lock, and strict main / preload / renderer isolation behind an allow-listed IPC surface.
+
+## What a release contains
 
 | Artifact | Platform |
 | --- | --- |
@@ -69,9 +88,9 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 Manifests carry SHA-512 digests and file sizes; the updater verifies them before installing anything.
 
-### 5. Download and install
+## Download and install
 
-Grab the newest build from [Releases → latest](https://github.com/qingchuang12/ai-tools-releases/releases/latest) and pick the artifact for your platform in the table above. Direct links for the current release (**1.1.1**, published 2026-11-02):
+Newest published build: **1.1.1** (2026-11-02) — [Releases → latest](https://github.com/qingchuang12/ai-tools-releases/releases/latest).
 
 - Windows installer — [AI-Tools-Setup-1.1.1.exe](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-Setup-1.1.1.exe)
 - Windows portable — [AI-Tools-1.1.1-portable.exe](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1-portable.exe)
@@ -80,147 +99,37 @@ Grab the newest build from [Releases → latest](https://github.com/qingchuang12
 
 The official site's download page ([www.ywhome.top/#product-ai-tools-download](https://www.ywhome.top/#product-ai-tools-download)) is opening up platform by platform; until a button is live there, this repository is the working download channel.
 
-Install notes:
+Builds are currently **not code-signed**: Windows SmartScreen → "More info → Run anyway"; macOS, if it reports the app as damaged, `xattr -cr /Applications/AI-Tools.app`; AppImage, `chmod +x` first.
 
-- Builds are currently **not code-signed**. Windows SmartScreen: "More info → Run anyway".
-- macOS Gatekeeper may report the app as damaged: `xattr -cr /Applications/AI-Tools.app`
-- AppImage: `chmod +x AI-Tools-1.1.1.AppImage` first.
+## In-app auto-update
 
-### 6. In-app auto-update
+Installed builds check this repository on their own and update in place — no re-downloading. NSIS installs follow `latest.yml`, portable builds follow `portable.yml`, macOS follows `latest-mac.yml`, Linux follows `latest-linux.yml` / `latest-linux-arm64.yml`.
 
-Installed builds check this repository on their own and update in place — no need to re-download. NSIS installs follow `latest.yml`, portable builds follow `portable.yml`, macOS follows `latest-mac.yml`, Linux follows `latest-linux.yml` / `latest-linux-arm64.yml`.
+## Licence, activation and ads
 
-### 7. Licence, activation and ads
+AI-Tools is **proprietary software** (all rights reserved); portions inherited from the open-source mcp-dock project remain under its original MIT licence, reproduced in `THIRD_PARTY_LICENSES.md` shipped inside the app.
 
-AI-Tools is **proprietary software** (all rights reserved) — the binaries here are licensed for installation and use as described in the end-user licence, not as open source; portions inherited from mcp-dock stay under its original MIT licence, reproduced in `THIRD_PARTY_LICENSES.md` shipped with the app.
+Everything works without activation. **Only cloud sync is entitlement-gated:** a fresh install gets a 60-day trial, after which cloud sync pauses until you activate with a locally verified signed token that is re-checked online periodically. Purchase and activation entry points: <https://www.ywhome.top/#product-ai-tools-pricing>.
 
-Everything is usable without activation: store browsing, one-click install, the Inspector, library editing, history rollback and multi-client sync. **Only cloud sync is entitlement-gated** — a fresh install gets a trial period (60 days by default), after which cloud sync pauses until you activate; activation is a locally verified signed token, re-checked online periodically. Purchase and activation entry points are on the official site: <https://www.ywhome.top/#product-ai-tools-pricing>.
+Some distribution builds show ads until you activate; other builds are compiled without any ads. That is a packaging variant, not a feature cut — store and library capabilities are identical.
 
-Some distribution builds show ads until you activate; other builds are compiled without any ads. This is a packaging variant, not a feature cut — store and library capabilities are identical.
+## Privacy and data
 
-### 8. Privacy and data
+Local-first: AI-Tools reads and writes config files on your machine and uploads nothing unless you configure cloud sync yourself. Application data lives in `~/.ai-tools/` (macOS / Linux) or `%USERPROFILE%\.ai-tools\` (Windows); the local cache is AES-256-GCM encrypted with a machine-derived key. Terms: <https://www.ywhome.top/legal/terms.html> · Privacy: <https://www.ywhome.top/legal/privacy.html>
 
-Local-first: AI-Tools reads and writes config files on your machine and does not upload anything unless you configure cloud sync yourself. Application data lives in `~/.ai-tools/` (macOS / Linux) or `%USERPROFILE%\.ai-tools\` (Windows); the local cache is AES-256-GCM encrypted with a machine-derived key. Remote credentials are never stored as plaintext. Terms: <https://www.ywhome.top/legal/terms.html> · Privacy: <https://www.ywhome.top/legal/privacy.html>
-
-### 9. Quick start
+## Quick start
 
 1. Install and open AI-Tools.
-2. Browse or search in the **MCP store** (or switch to the **Skills** tab).
-3. Click **Install**, select one or more target clients.
+2. Browse or search the **MCP store** (or switch to the **Skills** tab).
+3. Click **Install** and pick one or more target clients.
 4. Use the capability in that client — no JSON copy-pasting.
-5. Something wrong? Debug it in **Inspector**, then roll back from **History**.
+5. Something wrong? Reproduce it in **Inspector**, then roll back from **History**.
 6. Multiple machines? Configure Git or SFTP in **Settings → Cloud sync**.
 
-### 10. Support
+## Support
 
-- Product information, features, clients and pricing: <https://www.ywhome.top>
-- Bug reports and requests: [open an issue in this repository](https://github.com/qingchuang12/ai-tools-releases/issues) or write to **service@ywhome.top**
-
----
-
-## 简体中文
-
-**AI-Tools 是一款面向 AI 开发者的跨平台桌面管理器（Electron，支持 Windows / macOS / Linux）**：把散落在各家 AI 客户端配置里的 MCP 服务器与 Agent Skills 收拢到同一块面板，统一管理、批量分发、云端同步。项目基于开源 **mcp-dock** 二次开发，继承部分仍遵循其原 MIT 条款（MIT 原文随应用分发，见安装目录内 `THIRD_PARTY_LICENSES.md`），其余为专有软件。
-
-- **官网（产品介绍 / 功能 / 支持客户端 / 定价 / 法务）**：<https://www.ywhome.top>
-- **下载与在线更新清单**：本仓 [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest)，最新版本 **1.1.1**（2026-11-02 发布）
-- **支持范围**：31 个 MCP 配置入口、19 个 Skills 目标（含云端存储入口），自动适配 JSON / JSONC / TOML 三种配置格式
-- **核心能力**：MCP 商店与 Skills 商店（多数据源、磁盘缓存 + SWR 秒开）、一键多端安装/卸载/更新、内置 MCP Inspector（stdio / streamable-http / sse，Tools·Resources·Prompts 实调）、我的库（在线编辑 SKILL.md、导入 `.zip`/`.skill`/GitHub 链接、导出打包、冲突检测）、配置多端同步（探测驱动、共享目录去重）、云端同步（Git SSH/Token/匿名 + SFTP，后台任务队列与一致性比对）、历史备份与 Diff 回滚、运行时环境检测（Node.js / Python / Git）、浅色·暗色·跟随系统主题、9 种界面语言（含阿拉伯语 RTL）、AES-256-GCM 加密缓存与进程隔离
-- **授权**：商店、安装、Inspector、库编辑、历史回滚、多端同步**全部无需激活即可使用**；仅**云端同步**受权益门禁，新装默认 60 天试用，到期后暂停云同步直至激活。购买与激活入口见 [官网定价页](https://www.ywhome.top/#product-ai-tools-pricing)。
-- **安装提示**：当前构建未做代码签名。Windows 遇 SmartScreen 选「更多信息 → 仍要运行」；macOS 提示损坏时执行 `xattr -cr /Applications/AI-Tools.app`；AppImage 先 `chmod +x`。
-- **数据位置**：`~/.ai-tools/`（macOS / Linux）、`%USERPROFILE%\.ai-tools\`（Windows）。本地优先，未配置云同步时不上传任何内容。
-- **反馈**：在本仓 [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) 提问，或写信至 **service@ywhome.top**。条款：<https://www.ywhome.top/legal/terms.html> · 隐私：<https://www.ywhome.top/legal/privacy.html>
-
----
-
-## العربية
-
-**AI-Tools** تطبيق سطح مكتب متعدد المنصات (Electron على أنظمة Windows وmacOS وLinux) يجمع خوادم MCP ومهارات Agent الموزّعة على إعدادات أدوات الذكاء الاصطناعي في لوحة واحدة: تصفّح، تثبيت، تحرير، تصحيح، نسخ احتياطي ومزامنة سحابية.
-
-- **الموقع الرسمي**: <https://www.ywhome.top> — **التنزيلات**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (أحدث إصدار **1.1.1**)
-- يدعم 31 مدخل إعدادات MCP و19 وجهة للمهارات، بصيغ JSON / JSONC / TOML، مع 9 لغات واجهة تشمل العربية (تخطيط RTL).
-- كل الميزات متاحة دون تفعيل؛ البوابة الوحيدة هي المزامنة السحابية (فترة تجربة 60 يومًا افتراضيًا). الشراء: <https://www.ywhome.top/#product-ai-tools-pricing>
-- الملفات غير موقّعة حاليًا: على macOS نفّذ `xattr -cr /Applications/AI-Tools.app`.
-- البيانات محفوظة محليًا في `~/.ai-tools/` ولا تُرفع أي بيانات قبل إعداد المزامنة السحابية بنفسك.
-- الدعم: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## Deutsch
-
-**AI-Tools** ist eine plattformübergreifende Desktop-Anwendung (Electron für Windows / macOS / Linux), die MCP-Server und Agent Skills aus den Konfigurationsdateien aller KI-Coding-Clients in einer Oberfläche bündelt — durchsuchen, installieren, bearbeiten, debuggen, sichern und synchronisieren.
-
-- **Website**: <https://www.ywhome.top> · **Downloads**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (aktuell **1.1.1**)
-- 31 MCP-Konfigurationseinträge und 19 Skill-Ziele, Formate JSON / JSONC / TOML, 9 Benutzeroberflächen-Sprachen.
-- Alle Funktionen sind ohne Aktivierung nutzbar; nur die **Cloud-Synchronisation** ist an eine Lizenz gebunden (Standard-Testzeitraum 60 Tage). Kauf: <https://www.ywhome.top/#product-ai-tools-pricing>
-- Builds sind derzeit nicht signiert — macOS: `xattr -cr /Applications/AI-Tools.app`
-- Lokale Daten unter `~/.ai-tools/`; ohne eingerichtete Cloud-Synchronisation werden keine Daten hochgeladen.
-- Support: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## Español
-
-**AI-Tools** es una aplicación de escritorio multiplataforma (Electron para Windows / macOS / Linux) que reúne los servidores MCP y las Agent Skills dispersos en la configuración de cada cliente de IA en un solo panel: explorar, instalar, editar, depurar, respaldar y sincronizar en la nube.
-
-- **Sitio oficial**: <https://www.ywhome.top> · **Descargas**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (versión actual **1.1.1**)
-- 31 entradas de configuración MCP y 19 destinos de skills, con formatos JSON / JSONC / TOML y 9 idiomas de interfaz.
-- Todo funciona sin activación; solo la **sincronización en la nube** requiere licencia (periodo de prueba de 60 días por defecto). Compra: <https://www.ywhome.top/#product-ai-tools-pricing>
-- Las compilaciones aún no están firmadas — en macOS: `xattr -cr /Applications/AI-Tools.app`
-- Datos locales en `~/.ai-tools/`; nada se sube hasta que configuras la sincronización.
-- Soporte: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## Français
-
-**AI-Tools** est une application de bureau multiplateforme (Electron pour Windows / macOS / Linux) qui réunit, dans un seul panneau, les serveurs MCP et les Agent Skills dispersés dans la configuration de chaque client d'IA : parcourir, installer, éditer, déboguer, sauvegarder et synchroniser.
-
-- **Site officiel** : <https://www.ywhome.top> · **Téléchargements** : [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (version **1.1.1**)
-- 31 entrées de configuration MCP et 19 cibles de skills, formats JSON / JSONC / TOML, 9 langues d'interface.
-- Tout est utilisable sans activation ; seule la **synchronisation cloud** exige une licence (essai de 60 jours par défaut). Achat : <https://www.ywhome.top/#product-ai-tools-pricing>
-- Les builds ne sont pas encore signés — macOS : `xattr -cr /Applications/AI-Tools.app`
-- Données locales dans `~/.ai-tools/` ; rien n'est envoyé tant que la synchronisation n'est pas configurée.
-- Assistance : [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## Italiano
-
-**AI-Tools** è un'applicazione desktop multipiattaforma (Electron per Windows / macOS / Linux) che raccoglie in un unico pannello i server MCP e le Agent Skills sparsi nelle configurazioni dei vari client AI: sfogliare, installare, modificare, debuggare, fare backup e sincronizzare.
-
-- **Sito ufficiale**: <https://www.ywhome.top> · **Download**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (versione **1.1.1**)
-- 31 voci di configurazione MCP e 19 destinazioni di skills, formati JSON / JSONC / TOML, 9 lingue dell'interfaccia.
-- Tutto è utilizzabile senza attivazione; solo la **sincronizzazione cloud** richiede una licenza (periodo di prova di 60 giorni). Acquisto: <https://www.ywhome.top/#product-ai-tools-pricing>
-- Le build non sono ancora firmate — macOS: `xattr -cr /Applications/AI-Tools.app`
-- Dati locali in `~/.ai-tools/`; nulla viene caricato finché non configuri la sincronizzazione.
-- Supporto: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## 日本語
-
-**AI-Tools** は AI コーディングクライアントの設定ファイルに分散している MCP サーバーと Agent Skills を一つの画面に集約する、クロスプラットフォームのデスクトップアプリ（Electron / Windows・macOS・Linux）です。検索・インストール・編集・デバッグ・バックアップ・クラウド同期をまとめて行えます。
-
-- **公式サイト**: <https://www.ywhome.top> · **ダウンロード**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest)（最新 **1.1.1**）
-- 31 の MCP 設定エントリーと 19 の Skills 同期先に対応（JSON / JSONC / TOML 形式を自動吸収）、UI は 9 言語。
-- 有効化なしで全機能を利用可能。ゲートされるのは**クラウド同期**のみで、既定の 60 日トライアル後に停止します。購入: <https://www.ywhome.top/#product-ai-tools-pricing>
-- 現在のビルドは未署名です。macOS で起動しない場合: `xattr -cr /Applications/AI-Tools.app`
-- データは `~/.ai-tools/` に保存されるローカルファースト。クラウド同期を設定しない限り送信されません。
-- お問い合わせ: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
-
----
-
-## Русский
-
-**AI-Tools** — кроссплатформенное десктоп-приложение (Electron для Windows / macOS / Linux), которое собирает MCP-серверы и Agent Skills из конфигураций всех AI-клиентов в одну панель: поиск, установка, редактирование, отладка, резервные копии и облачная синхронизация.
-
-- **Официальный сайт**: <https://www.ywhome.top> · **Загрузки**: [Releases](https://github.com/qingchuang12/ai-tools-releases/releases/latest) (текущая версия **1.1.1**)
-- 31 конфигурационный вход MCP и 19 целей для скиллов, форматы JSON / JSONC / TOML, 9 языков интерфейса.
-- Все функции доступны без активации; ограничена только **облачная синхронизация** (испытательный период по умолчанию 60 дней). Покупка: <https://www.ywhome.top/#product-ai-tools-pricing>
-- Сборки пока не подписаны — на macOS выполните `xattr -cr /Applications/AI-Tools.app`
-- Данные хранятся локально в `~/.ai-tools/`; без настроенной синхронизации ничего не отправляется.
-- Поддержка: [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) · **service@ywhome.top**
+- Product information, features, supported clients and pricing: <https://www.ywhome.top>
+- Bug reports and feature requests: [open an issue here](https://github.com/qingchuang12/ai-tools-releases/issues) or write to **service@ywhome.top**
 
 ---
 
