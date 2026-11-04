@@ -102,8 +102,7 @@ Local-first : AI-Tools lit et écrit les fichiers de configuration sur votre mac
 2. Cherchez dans le **store MCP** (ou l'onglet **Skills**).
 3. Cliquez **Installer** et choisissez les clients cibles.
 4. Utilisez la capacité dans le client — sans copier-coller de JSON.
-5. Un serveur MCP dysfonctionne ? Appelez ses outils dans l'**Inspecteur** et lisez l'erreur réelle. Configuration cassée ? Ouvrez l'instantané le plus proche dans l'**Historique** et laissez le diff vous dire quoi remettre ou retirer.
-6. Plusieurs machines ? Configurez Git ou SFTP dans **Paramètres → Synchronisation cloud**.
+5. Plusieurs machines ? Configurez Git ou SFTP dans **Paramètres → Synchronisation cloud**.
 
 ## Assistance
 

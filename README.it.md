@@ -102,8 +102,7 @@ Local-first: AI-Tools legge e scrive i file di configurazione sulla tua macchina
 2. Cerca nello **store MCP** (o nella scheda **Skills**).
 3. Clicca **Installa** e scegli i client di destinazione.
 4. Usa la capacità nel client, senza copiare e incollare JSON.
-5. Un server MCP non risponde? Richiama i suoi tool nell'**Inspector** e leggi l'errore reale. Configurazione rotta? Apri lo snapshot più vicino nella **Cronologia** e lascia che il diff ti dica cosa rimettere o togliere.
-6. Più macchine? Configura Git o SFTP in **Impostazioni → Sincronizzazione cloud**.
+5. Più macchine? Configura Git o SFTP in **Impostazioni → Sincronizzazione cloud**.
 
 ## Supporto
 

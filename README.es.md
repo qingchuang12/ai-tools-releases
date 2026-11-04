@@ -102,8 +102,7 @@ Local-first: AI-Tools lee y escribe los ficheros de configuración de tu equipo 
 2. Busca en la **tienda MCP** (o en la pestaña **Skills**).
 3. Pulsa **Instalar** y elige los clientes destino.
 4. Úsalo en ese cliente, sin copiar y pegar JSON.
-5. ¿Falla un MCP? Llame sus herramientas en el **Inspector** y lea el error real. ¿Configuración rota? Abra el respaldo más cercano en el **Historial** y use el diff para ver qué entradas devolver o quitar.
-6. ¿Varios equipos? Configura Git o SFTP en **Ajustes → Sincronización en la nube**.
+5. ¿Varios equipos? Configura Git o SFTP en **Ajustes → Sincronización en la nube**.
 
 ## Soporte
 
