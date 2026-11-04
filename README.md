@@ -119,7 +119,7 @@ Local-first: AI-Tools reads and writes config files on your machine and uploads 
 
 ## Support
 
-- Product information, features, supported clients and pricing: <https://www.ywhome.top>
+- Product information, features and supported clients: <https://www.ywhome.top>
 - Bug reports and feature requests: [open an issue here](https://github.com/qingchuang12/ai-tools-releases/issues) or write to **service@ywhome.top**
 
 ---

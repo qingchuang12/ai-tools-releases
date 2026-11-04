@@ -119,7 +119,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 ## 支持
 
-- 产品信息、功能明细、支持客户端与定价：<https://www.ywhome.top>
+- 产品信息与功能明细：<https://www.ywhome.top>
 - 缺陷与需求反馈：在本仓 [Issues](https://github.com/qingchuang12/ai-tools-releases/issues) 提问，或写信至 **service@ywhome.top**
 
 ---

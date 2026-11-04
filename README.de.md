@@ -107,7 +107,7 @@ Lokal zuerst: AI-Tools liest und schreibt Konfigurationsdateien auf Ihrem Rechne
 
 ## Support
 
-- Produktinfo, Funktionen, Clients und Preise: <https://www.ywhome.top>
+- Produktinfo und Funktionen: <https://www.ywhome.top>
 - Fehlermeldungen und Wünsche: [Issues in diesem Repository](https://github.com/qingchuang12/ai-tools-releases/issues) oder **service@ywhome.top**
 
 ---
