@@ -107,7 +107,7 @@ Local-first: AI-Tools lee y escribe los ficheros de configuración de tu equipo 
 
 ## Soporte
 
-- Información del producto, funciones, clientes y precios: <https://www.ywhome.top>
+- Información del producto, funciones y clientes: <https://www.ywhome.top>
 - Errores y peticiones: [abre una issue aquí](https://github.com/qingchuang12/ai-tools-releases/issues) o escribe a **service@ywhome.top**
 
 ---

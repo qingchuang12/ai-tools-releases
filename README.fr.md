@@ -107,7 +107,7 @@ Local-first : AI-Tools lit et écrit les fichiers de configuration sur votre mac
 
 ## Assistance
 
-- Informations produit, fonctions, clients et tarifs : <https://www.ywhome.top>
+- Informations produit, fonctions et clients : <https://www.ywhome.top>
 - Anomalies et demandes : [ouvrir une issue ici](https://github.com/qingchuang12/ai-tools-releases/issues) ou écrire à **service@ywhome.top**
 
 ---
