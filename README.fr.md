@@ -1,6 +1,6 @@
 # AI-Tools (Français)
 
-**Un seul panneau pour toute votre chaîne d'outils IA.** AI-Tools réunit, dans une application de bureau, les serveurs MCP et les Agent Skills dispersés dans la configuration de chaque client de codage IA : parcourir, installer, éditer, déboguer, revenir en arrière et synchroniser — sans jamais retoucher un JSON à la main.
+**Un seul panneau pour toute votre chaîne d'outils IA.** AI-Tools réunit, dans une application de bureau, les serveurs MCP et les Agent Skills dispersés dans la configuration de chaque client de codage IA : parcourir, installer, éditer, déboguer et synchroniser — sans jamais retoucher un JSON à la main.
 
 <p align="center">
   <a href="https://www.ywhome.top">Site officiel</a> ·
@@ -36,7 +36,7 @@
 | --- | --- |
 | Un serveur, six fichiers JSON, six noms de clés | **Écrire une fois, déployer partout.** La configuration part vers chaque client choisi, dans son propre dialecte : JSON / JSONC / TOML, `servers` plutôt que `mcpServers`, `working_directory` plutôt que `cwd`, `transport` plutôt que `type`, `context_servers`, `mcp_servers`. |
 | Les listes du store qui tournent | **Premier écran instantané.** Cache disque + SWR : l'affichage arrive avant le réseau, l'actualisation se fait en silence (listes 1 h, détails 24 h), avec rafraîchissement forcé à la demande. |
-| « Est-ce que mon édition vient de casser le client ? » | **Tout est réversible.** Installations, désinstallations, mises à jour, synchronisations et éditions sont sauvegardées ; comparez n'importe quel instantané à l'état courant (ajouté / supprimé / modifié, en couleurs) et restaurez en un clic. |
+| « Est-ce que mon édition vient de casser le client ? » | **Chaque modification est sauvegardée.** Installations, désinstallations, mises à jour, synchronisations et éditions écrivent un instantané dans `~/.ai-tools/backups` (les 50 derniers sont gardés) ; ouvrez-le pour voir, client par client, ce qui a été ajouté, supprimé ou modifié par rapport à l'état courant, et corrigez exactement cela. |
 | Déboguer un serveur MCP à coups de curl | **Inspecteur intégré.** stdio / streamable-http / sse, appel des Tools / Resources / Prompts depuis un formulaire, résultat en JSON coloré, journal dans un panneau redimensionnable. |
 | Tout reconstruire sur une nouvelle machine | **Votre propre cloud, restauration en un clic.** Push vers votre dépôt Git (clé SSH / jeton HTTPS / anonyme) ou votre SFTP (mot de passe / clé), avec file de tâches, progression et reprise, et comparaison explicite local-vers-remote avant écrasement. |
 | Un gestionnaire de configuration qui téléphone ? | **Local d'abord.** Rien ne sort tant que vous n'avez pas configuré la synchronisation ; cache chiffré AES-256-GCM, identifiants conservés uniquement comme références chiffrées SecretStore, liens externes limités à http/https. |
@@ -49,7 +49,7 @@
 - **Inspecteur MCP** — commande, arguments, variables d'environnement et en-têtes personnalisables ; découverte des Tools / Resources / Prompts ; sous-processus nettoyés à la fermeture.
 - **Bibliothèque** — tout ce qui est installé au même endroit : édition commande/arguments/env, sélection multiple et synchronisation, désinstallation. Côté skills : édition en ligne du SKILL.md, gestion des fichiers joints, import `.zip` / `.skill` / dossier / lien GitHub / glisser-déposer, export groupé en zip, résolution des conflits avant push cloud.
 - **Synchronisation cloud** — Git ou SFTP, tirage automatique au démarrage, push manuel, panneau de tâches avec progression et reprise, contrôle de cohérence des deux côtés.
-- **Historique et retour en arrière** — horodatage, taille, clients concernés et nombre d'entrées ; diff entre versions ; restauration en un clic ; purge de l'historique.
+- **Historique** — sauvegardes automatiques avec horodatage, taille, clients concernés et nombre d'entrées ; « Voir les changements » compare n'importe quel instantané à la configuration actuelle, ventilé par client ; purge de l'historique. Les instantanés sont dans `~/.ai-tools/backups` ; aucun bouton de restauration n'existe encore, revenir en arrière est manuel.
 - **Sondes d'exécution** — détection Node.js, Python et Git (présence, version, chemin) pour expliquer « installé mais ne démarre pas ».
 - **Sources et jetons d'API** — sources intégrées et connexes directes gérées ensemble (URL de base + jeton), test de connexion sur les vrais endpoints de plateforme, activation, défaut, export ; centre de jetons avec portées et expiration.
 - **Apparence et 9 langues** — clair / sombre / système ; English, 简体中文, العربية (RTL complet), Deutsch, Español, Français, Italiano, 日本語, Русский ; chargement à la demande, bascule immédiate.
@@ -102,7 +102,7 @@ Local-first : AI-Tools lit et écrit les fichiers de configuration sur votre mac
 2. Cherchez dans le **store MCP** (ou l'onglet **Skills**).
 3. Cliquez **Installer** et choisissez les clients cibles.
 4. Utilisez la capacité dans le client — sans copier-coller de JSON.
-5. Un souci ? Reproduisez-le dans l'**Inspecteur**, puis revenez en arrière via l'**Historique**.
+5. Un serveur MCP dysfonctionne ? Appelez ses outils dans l'**Inspecteur** et lisez l'erreur réelle. Configuration cassée ? Ouvrez l'instantané le plus proche dans l'**Historique** et laissez le diff vous dire quoi remettre ou retirer.
 6. Plusieurs machines ? Configurez Git ou SFTP dans **Paramètres → Synchronisation cloud**.
 
 ## Assistance

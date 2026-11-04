@@ -1,6 +1,6 @@
 # AI-Tools (Español)
 
-**Un solo panel para toda tu cadena de herramientas de IA.** AI-Tools reúne en una aplicación de escritorio los servidores MCP y las Agent Skills repartidos por la configuración de cada cliente de programación con IA: explorar, instalar, editar, depurar, revertir y sincronizar, sin volver a tocar un JSON a mano.
+**Un solo panel para toda tu cadena de herramientas de IA.** AI-Tools reúne en una aplicación de escritorio los servidores MCP y las Agent Skills repartidos por la configuración de cada cliente de programación con IA: explorar, instalar, editar, depurar y sincronizar, sin volver a tocar un JSON a mano.
 
 <p align="center">
   <a href="https://www.ywhome.top">Sitio oficial</a> ·
@@ -36,7 +36,7 @@
 | --- | --- |
 | Un servidor, seis JSON, seis nombres de clave | **Escribe una vez, despliega en todas.** La configuración se reparte a los clientes elegidos hablando el dialecto de cada uno: JSON / JSONC / TOML, `servers` en vez de `mcpServers`, `working_directory` en vez de `cwd`, `transport` en vez de `type`, `context_servers`, `mcp_servers`. |
 | Listas de la tienda que no cargan | **Primera pantalla instantánea.** Caché en disco + SWR: primero se ve, luego se refresca en silencio (listas 1 h, detalle 24 h), con refuerzo forzado cuando lo pidas. |
-| «¿Mi último cambio rompió el cliente?» | **Todo es reversible.** Instalaciones, desinstalaciones, actualizaciones, sincronizaciones y ediciones se respaldan solas; compara cualquier versión con el estado actual (añadido / eliminado / modificado, en color) y restaura con un clic. |
+| «¿Mi último cambio rompió el cliente?» | **Cada cambio queda respaldado.** Instalaciones, desinstalaciones, actualizaciones, sincronizaciones y ediciones guardan una foto en `~/.ai-tools/backups` (se conservan las 50 últimas); abra cualquier foto y vea, por cliente, qué se añadió, quitó o cambió frente al estado actual, y corrija exactamente eso. |
 | Depurar un servidor MCP con curl | **Inspector integrado.** stdio / streamable-http / sse, llamar Tools / Resources / Prompts desde un formulario, resultado con resaltado JSON y registro en panel redimensionable. |
 | Rehacer toda la configuración en otra máquina | **Tu propia nube, restaurar en un clic.** Envía a tu repositorio Git (clave SSH / token HTTPS / anónimo) o a tu SFTP (contraseña / clave) con cola de tareas, progreso y reintento, y una comparación explícita local-contra-remoto antes de sobrescribir. |
 | Un gestor de configuración que telefonea a casa | **Local por defecto.** Nada sale del equipo hasta que configuras la sincronización; caché cifrada AES-256-GCM, credenciales guardadas solo como referencias cifradas SecretStore y enlaces externos limitados a http/https. |
@@ -49,7 +49,7 @@
 - **Inspector MCP** — comando, argumentos, variables de entorno y cabeceras a medida; descubrimiento de Tools / Resources / Prompts; procesos hijos recogidos al cerrar la aplicación.
 - **Biblioteca** — todo lo instalado en un listado: editar comando / argumentos / entorno, selección múltiple y sincronización, desinstalar. En skills: edición en línea del SKILL.md, gestión de archivos adjuntos, importación de `.zip` / `.skill` / carpeta / enlace GitHub / arrastrar y soltar, exportación agrupada en zip y resolución de conflictos antes de subir.
 - **Sincronización en la nube** — Git o SFTP, descarga automática al arrancar, push manual, panel de tareas con progreso y reintento, y comprobación de coherencia entre ambos lados.
-- **Historial y reversión** — hora, tamaño, clientes implicados y número de entradas; diff entre versiones; restauración con un clic; borrado completo del historial.
+- **Historial** — respaldos automáticos con hora, tamaño, clientes implicados y número de entradas; «Ver cambios» compara cualquier respaldo con la configuración actual, desglosado por cliente; y borrado completo del historial. Los respaldos viven en `~/.ai-tools/backups`; todavía no hay botón para restaurar, volver atrás es manual.
 - **Sondas de entorno** — detección de Node.js, Python y Git (presencia, versión, ruta) para responder a «instalado pero no arranca».
 - **Fuentes y tokens de API** — fuentes integradas y conexiones directas a plataformas (URL base + token) gestionadas juntas, prueba de conexión contra endpoints reales, activación, predeterminado y exportación; centro de tokens con ámbitos y caducidad.
 - **Apariencia y 9 idiomas** — claro / oscuro / sistema; English, 简体中文, العربية (RTL), Deutsch, Español, Français, Italiano, 日本語, Русский; paquetes de idioma cargados bajo demanda y cambio inmediato.
@@ -102,7 +102,7 @@ Local-first: AI-Tools lee y escribe los ficheros de configuración de tu equipo 
 2. Busca en la **tienda MCP** (o en la pestaña **Skills**).
 3. Pulsa **Instalar** y elige los clientes destino.
 4. Úsalo en ese cliente, sin copiar y pegar JSON.
-5. ¿Algo falla? Reprodúcelo en el **Inspector** y revierte desde el **Historial**.
+5. ¿Falla un MCP? Llame sus herramientas en el **Inspector** y lea el error real. ¿Configuración rota? Abra el respaldo más cercano en el **Historial** y use el diff para ver qué entradas devolver o quitar.
 6. ¿Varios equipos? Configura Git o SFTP en **Ajustes → Sincronización en la nube**.
 
 ## Soporte
