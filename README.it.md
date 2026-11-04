@@ -22,7 +22,7 @@
 </p>
 
 > **Questo repository** è il canale ufficiale dei rilasci di AI-Tools: installer per Windows / macOS / Linux e i manifesti che l'app legge per aggiornarsi da sola. Non contiene codice sorgente.
-> **Guida alle funzioni, client supportati e acquisto della licenza: <https://www.ywhome.top>**
+> **Guida alle funzioni e client supportati: <https://www.ywhome.top>**
 
 ---
 
@@ -40,7 +40,6 @@
 | Debuggare un server MCP con curl | **Inspector integrato.** stdio / streamable-http / sse, chiamata di Tools / Resources / Prompts da form, risultato con evidenziazione JSON e log in pannello ridimensionabile. |
 | Rifare tutto su un'altra macchina | **Il tuo cloud, ripristino in un clic.** Push verso il tuo Git (chiave SSH / token HTTPS / anonimo) o il tuo SFTP (password / chiave), con coda di attività, progresso e retry, e confronto esplicito locale-contro-remoto prima della sovrascrittura. |
 | Un gestore di configurazioni che telefona a casa | **Local-first.** Nulla esce dalla macchina finché non configuri la sincronizzazione; cache AES-256-GCM, credenziali solo come riferimenti cifrati SecretStore, link esterni limitati a http/https. |
-| Muri a pagamento scoperti dopo l'installazione | **Nessuna funzione in ostaggio.** Store, installazione, inspector, libreria, cronologia e sincronizzazione multi-client funzionano senza attivazione; solo la sincronizzazione cloud richiede licenza, con 60 giorni di prova. |
 
 ## Funzioni principali
 
@@ -92,14 +91,6 @@ Le build non sono ancora **firmate**: su Windows SmartScreen → «Ulteriori inf
 ## Aggiornamento automatico
 
 Le installazioni verificano da sole questo repository e si aggiornano in loco. Le NSIS seguono `latest.yml`, le portable `portable.yml`, macOS `latest-mac.yml`, Linux `latest-linux.yml` / `latest-linux-arm64.yml`.
-
-## Licenza, attivazione e pubblicità
-
-AI-Tools è **software proprietario** (tutti i diritti riservati); le parti derivate dal progetto open source mcp-dock restano sotto la sua licenza MIT, riprodotta nel file `THIRD_PARTY_LICENSES.md` distribuito con l'app.
-
-Tutto funziona senza attivazione. **Solo la sincronizzazione cloud è vincolata alla licenza**: 60 giorni di prova dall'installazione, poi si mette in pausa finché non attivi con un token firmato verificato in locale e ricontrollato online periodicamente. Acquisto: <https://www.ywhome.top/#product-ai-tools-pricing>.
-
-Alcune varianti di distribuzione mostrano pubblicità finché non attivi; altre sono compilate senza alcuna pubblicità. È una variante di packaging, non una riduzione di funzioni.
 
 ## Privacy e dati
 
