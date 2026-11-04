@@ -102,8 +102,7 @@ Lokal zuerst: AI-Tools liest und schreibt Konfigurationsdateien auf Ihrem Rechne
 2. Im **MCP-Store** suchen (oder in den **Skills**-Tab wechseln).
 3. **Installieren** klicken und Ziel-Clients wählen.
 4. Im Client sofort verwenden — ohne JSON-Kauerei.
-5. MCP-Fehler? Rufen Sie die Tools im **Inspector** auf und lesen Sie die echte Fehlermeldung. Kaputte Konfiguration? Öffnen Sie die nächstliegende Sicherung in der **Historie** und gleichen Sie ab, welche Einträge zurückgehören.
-6. Mehrere Rechner? **Einstellungen → Cloud-Sync** mit Git oder SFTP einrichten.
+5. Mehrere Rechner? **Einstellungen → Cloud-Sync** mit Git oder SFTP einrichten.
 
 ## Support
 

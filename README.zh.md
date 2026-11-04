@@ -114,8 +114,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 2. 在「MCP 商店」浏览或搜索，或切到「Skills」标签。
 3. 点「安装」，勾选一个或多个目标客户端。
 4. 回到该客户端直接使用，无需复制粘贴 JSON。
-5. MCP 报错时，在「Inspector」里直接调用该 Server 的工具看真实输出；配置改坏时，打开「历史」里时间最接近的一次备份，按「查看变更」列出的新增 / 移除 / 修改逐项改回。
-6. 多台设备去「设置 → 云同步」配置 Git 或 SFTP。
+5. 多台设备去「设置 → 云同步」配置 Git 或 SFTP。
 
 ## 支持
 

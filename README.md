@@ -114,8 +114,7 @@ Local-first: AI-Tools reads and writes config files on your machine and uploads 
 2. Browse or search the **MCP store** (or switch to the **Skills** tab).
 3. Click **Install** and pick one or more target clients.
 4. Use the capability in that client — no JSON copy-pasting.
-5. MCP server misbehaving? Call its tools in **Inspector** and read the real error. Configuration broken? Open the nearest snapshot in **History**, press **View Changes**, and put back exactly what the diff lists as removed — or delete what it lists as added.
-6. Multiple machines? Configure Git or SFTP in **Settings → Cloud sync**.
+5. Multiple machines? Configure Git or SFTP in **Settings → Cloud sync**.
 
 ## Support
 
