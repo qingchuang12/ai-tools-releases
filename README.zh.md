@@ -72,7 +72,7 @@
 | --- | --- |
 | `AI-Tools-Setup-<版本>.exe` | Windows 安装包（NSIS，x64） |
 | `AI-Tools-<版本>-portable.exe` | Windows 便携版，免安装 |
-| `AI-Tools-<version>.dmg` / `-arm64.dmg` | macOS 磁盘映像（Intel / Apple 芯片） |
+| `AI-Tools-<版本>.dmg` / `-arm64.dmg` | macOS 磁盘映像（Intel / Apple 芯片） |
 | `AI-Tools-<版本>-mac.zip` / `-arm64-mac.zip` | macOS 压缩包 |
 | `AI-Tools-<版本>.AppImage` / `-arm64.AppImage` | Linux AppImage（x64 / arm64） |
 | `ai-tools_<版本>_amd64.deb` / `_arm64.deb` | Linux .deb |

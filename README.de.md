@@ -50,7 +50,7 @@
 - **Bibliothek** — alles Installierte an einem Ort: Befehl/Argumente/Env bearbeiten, mehrfach auswählen und synchronisieren, deinstallieren. Im Skills-Bereich SKILL.md online bearbeiten, Anhänge verwalten, `.zip` / `.skill` / Ordner / GitHub-Link / Drag-&-Drop importieren, mehrere als Zip exportieren, Konflikte vor dem Push klären.
 - **Cloud-Synchronisation** — Git oder SFTP, automatischer Pull beim Start, manueller Push, Aufgabenpanel mit Fortschritt und Retry, Konsistenzprüfung beider Seiten.
 - **Historie** — automatische Sicherungen mit Zeit, Größe, betroffenen Clients und Eintragszahlen; „Änderungen ansehen“ vergleicht jeden Schnappschuss clientweise mit der aktuellen Konfiguration; Historie komplett leeren. Die Schnappschüsse liegen in `~/.ai-tools/backups`; einen Wiederherstellungs-Knopf gibt es noch nicht, Zurücksetzen ist Handarbeit.
-- **Laufzeit-Prüfung** — Node.js, Python und Git erkennen (Vorhandensein, Version, Pfad) und erklären „installiert, startet aber nicht“.
+- **Laufzeit-Prüfung** — Node.js, Python und Git erkennen (Vorhandensein, Version, Pfad) und erklären „installiert, startet aber nicht".
 - **Quellen & API-Tokens** — eingebaute und direkt angebundene Plattformen (Base URL + Token) gemeinsam verwalten, Verbindungstest gegen echte Plattform-Endpunkte, an/aus, Standard, Export; Token-Center mit Scopes und Ablaufdatum.
 - **Optik & 9 Sprachen** — hell / dunkel / System; English, 简体中文, العربية (RTL), Deutsch, Español, Français, Italiano, 日本語, Русский; Sprachpakete werden bei Bedarf geladen, Umschalten sofort.
 - **Sicherheit** — AES-256-GCM-Cache mit maschinenabhängigem Schlüssel, http/https-only-Links in Systembrowser, DNS-over-HTTPS, Einzelinstanz-Sperre, strikt getrennte Haupt-/Preload-/Renderer-Prozesse mit IPC-Allow-List.
@@ -86,7 +86,7 @@ Aktuell veröffentlichte Version: **1.1.1** (2026-11-02) — [Releases → neues
 
 Die Download-Seite der offiziellen Website ([www.ywhome.top/#product-ai-tools-download](https://www.ywhome.top/#product-ai-tools-download)) wird gerade plattformweise freigeschaltet; bis dahin ist dieses Repository der offizielle Bezugsweg.
 
-Die Builds sind derzeit **nicht signiert**: Windows SmartScreen → „Weitere Informationen → Trotzdem ausführen“; macOS bei damaged-Meldung `xattr -cr /Applications/AI-Tools.app`; AppImage zuerst `chmod +x`.
+Die Builds sind derzeit **nicht signiert**: Windows SmartScreen → „Weitere Informationen → Trotzdem ausführen"; macOS bei damaged-Meldung `xattr -cr /Applications/AI-Tools.app`; AppImage zuerst `chmod +x`.
 
 ## Automatische Aktualisierung
 
