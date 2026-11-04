@@ -28,7 +28,7 @@
 
 ## La capacità, in una riga
 
-**31 voci di configurazione MCP e 19 destinazioni di skills gestite come un unico inventario** — Cursor, VS Code, Claude Code, Gemini CLI, Codex CLI, Windsurf, Zed, TRAE (CN / SOLO / plugin), Kiro, OpenCode, IDE JetBrains, Antigravity, OpenClaw, CodeBuddy, WorkBuddy, Qoder, ZCode, Cline, Qwen Code, iFlow CLI, LM Studio, OpenHands, GitHub Copilot CLI, Warp, Kimi Code CLI, Kilo Code, Goose e la voce di archiviazione cloud. L'elenco nasce dalla探测 della tua macchina; ogni client mancante si aggiunge indicando il percorso di configurazione e la cartella delle skills.
+**31 voci di configurazione MCP e 19 destinazioni di skills gestite come un unico inventario** — Cursor, VS Code, Claude Code, Gemini CLI, Codex CLI, Windsurf, Zed, TRAE (CN / SOLO / plugin), Kiro, OpenCode, IDE JetBrains, Antigravity, OpenClaw, CodeBuddy, WorkBuddy, Qoder, ZCode, Cline, Qwen Code, iFlow CLI, LM Studio, OpenHands, GitHub Copilot CLI, Warp, Kimi Code CLI, Kilo Code, Goose e la voce di archiviazione cloud. L'elenco nasce dalla rilevazione dei client presenti sulla tua macchina; ogni client mancante si aggiunge indicando il percorso di configurazione e la cartella delle skills.
 
 ## Perché conviene
 
@@ -39,7 +39,7 @@
 | «La mia modifica ha rotto il client?» | **Tutto è reversibile.** Installazioni, disinstallazioni, aggiornamenti, sincronizzazioni e modifiche vengono salvati; confronta uno snapshot con lo stato attuale (aggiunto / rimosso / modificato, a colori) e ripristina con un clic. |
 | Debuggare un server MCP con curl | **Inspector integrato.** stdio / streamable-http / sse, chiamata di Tools / Resources / Prompts da form, risultato con evidenziazione JSON e log in pannello ridimensionabile. |
 | Rifare tutto su un'altra macchina | **Il tuo cloud, ripristino in un clic.** Push verso il tuo Git (chiave SSH / token HTTPS / anonimo) o il tuo SFTP (password / chiave), con coda di attività, progresso e retry, e confronto esplicito locale-contro-remoto prima della sovrascrittura. |
-| Un gestore di configurazioni che telefona a casa | **Local-first.** Nulla esce dal machine finché non configuri la sincronizzazione; cache AES-256-GCM, credenziali solo come riferimenti cifrati SecretStore, link esterni limitati a http/https. |
+| Un gestore di configurazioni che telefona a casa | **Local-first.** Nulla esce dalla macchina finché non configuri la sincronizzazione; cache AES-256-GCM, credenziali solo come riferimenti cifrati SecretStore, link esterni limitati a http/https. |
 | Muri a pagamento scoperti dopo l'installazione | **Nessuna funzione in ostaggio.** Store, installazione, inspector, libreria, cronologia e sincronizzazione multi-client funzionano senza attivazione; solo la sincronizzazione cloud richiede licenza, con 60 giorni di prova. |
 
 ## Funzioni principali
