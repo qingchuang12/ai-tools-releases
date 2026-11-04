@@ -107,7 +107,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 ## サポート
 
-- 製品情報・機能・対応クライアント・価格：<https://www.ywhome.top>
+- 製品情報・機能・対応クライアント：<https://www.ywhome.top>
 - 報告・要望：[このリポジトリの Issues](https://github.com/qingchuang12/ai-tools-releases/issues) または **service@ywhome.top**
 
 ---

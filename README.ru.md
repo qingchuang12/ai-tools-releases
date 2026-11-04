@@ -107,7 +107,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 ## Поддержка
 
-- О продукте, функциях, клиентах и ценах: <https://www.ywhome.top>
+- О продукте, функциях и клиентах: <https://www.ywhome.top>
 - Об ошибках и пожеланиях: [создайте issue здесь](https://github.com/qingchuang12/ai-tools-releases/issues) или напишите на **service@ywhome.top**
 
 ---
