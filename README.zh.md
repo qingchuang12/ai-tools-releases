@@ -1,6 +1,6 @@
 # AI-Tools（简体中文）
 
-**一个面板，管住你的整条 AI 工具链。** AI-Tools 把你使用的每一款 AI 编程客户端里的 MCP 服务器与 Agent Skills 全部收进一个桌面应用：发现、安装、编辑、调试、回滚、同步，一步到位，从此不再手改配置文件。
+**一个面板，管住你的整条 AI 工具链。** AI-Tools 把你使用的每一款 AI 编程客户端里的 MCP 服务器与 Agent Skills 全部收进一个桌面应用：发现、安装、编辑、调试、同步，一步到位，从此不再手改配置文件。
 
 <p align="center">
   <a href="https://www.ywhome.top">官方网站</a> ·
@@ -36,7 +36,7 @@
 | --- | --- |
 | 同一个 Server，六份 JSON，六种键名 | **一次写入，多端生效。** 一次点选即把配置分发到所选客户端，并自动说各家的方言：JSON / JSONC / TOML、`servers` 与 `mcpServers`、`working_directory` 与 `cwd`、`transport` 与 `type`、`context_servers`、`mcp_servers`。 |
 | 商店列表一直在转圈 | **首屏秒开。** 磁盘缓存 + SWR，先出画面再等网络，后台静默刷新（列表 1 小时、详情 24 小时），要新数据时一键强制刷新。 |
-| 「刚改的配置会不会把客户端搞坏？」 | **任何改动都能退。** 安装、卸载、更新、同步、编辑全部自动备份；任意历史版本与当前状态做 Diff（新增 / 移除 / 修改分色标注），一键恢复。 |
+| 「刚改的配置会不会把客户端搞坏？」 | **每次改动都有备份。** 安装、卸载、更新、同步、编辑都会把配置快照到 `~/.ai-tools/backups`（保留最近 50 份）；打开任一备份就能看到它与当前配置逐客户端的差异（新增 / 移除 / 修改），照着差异改回去即可。 |
 | 用 curl 和文本编辑器调 MCP | **内置 Inspector。** stdio / streamable-http / sse 三种传输，表单里直接调用 Tool 并传参，结果 JSON 高亮，日志面板可拖拽。 |
 | 换台机器要重配一遍 | **云端在你手里，一键还原。** 配置推到你自己的 Git（SSH 私钥 / HTTPS Token / 匿名）或 SFTP（密码 / 私钥），后台任务队列带实时进度与重试，推送前先做本地与云端的逐条一致性比对。 |
 | Skills 只能靠命令行摆弄 | **完整的技能工作流。** 应用内在线编辑 SKILL.md 的 frontmatter 与正文、管理附属文件；导入 `.zip` / `.skill` / 已解压目录 / 粘贴 GitHub 链接 / 拖拽；多个技能一键打包导出；上云前自动冲突检测，可逐条选择覆盖或跳过。 |
@@ -56,7 +56,7 @@
 
 **云端同步** —— Git / SFTP 双通道，启动自动拉取与手动推送都进任务面板，失败一键重试；一致性检测逐条对比两端内容，确认后才动手，避免误覆盖。
 
-**历史与回滚** —— 备份列表展示时间、大小、涉及客户端与条目数量；任意版本 Diff 对比；一键恢复；支持清空全部历史。
+**配置历史** —— 备份列表展示时间、大小、涉及客户端与条目数量；「查看变更」把任一备份与当前配置逐客户端对比（新增 / 移除 / 修改）；支持清空全部历史。快照存放在 `~/.ai-tools/backups`；**当前版本界面不提供一键恢复**，需照差异手动改回。
 
 **运行时环境检测** —— 自动识别本机 Node.js、Python、Git 的安装状态、版本与路径，快速定位「装了却跑不起来」。
 
@@ -72,7 +72,7 @@
 | --- | --- |
 | `AI-Tools-Setup-<版本>.exe` | Windows 安装包（NSIS，x64） |
 | `AI-Tools-<版本>-portable.exe` | Windows 便携版，免安装 |
-| `AI-Tools-<版本>.dmg` / `-arm64.dmg` | macOS 磁盘映像（Intel / Apple 芯片） |
+| `AI-Tools-<version>.dmg` / `-arm64.dmg` | macOS 磁盘映像（Intel / Apple 芯片） |
 | `AI-Tools-<版本>-mac.zip` / `-arm64-mac.zip` | macOS 压缩包 |
 | `AI-Tools-<版本>.AppImage` / `-arm64.AppImage` | Linux AppImage（x64 / arm64） |
 | `ai-tools_<版本>_amd64.deb` / `_arm64.deb` | Linux .deb |
@@ -114,7 +114,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 2. 在「MCP 商店」浏览或搜索，或切到「Skills」标签。
 3. 点「安装」，勾选一个或多个目标客户端。
 4. 回到该客户端直接使用，无需复制粘贴 JSON。
-5. 出问题先在「Inspector」里复现，再到「历史」一键回滚。
+5. MCP 报错时，在「Inspector」里直接调用该 Server 的工具看真实输出；配置改坏时，打开「历史」里时间最接近的一次备份，按「查看变更」列出的新增 / 移除 / 修改逐项改回。
 6. 多台设备去「设置 → 云同步」配置 Git 或 SFTP。
 
 ## 支持

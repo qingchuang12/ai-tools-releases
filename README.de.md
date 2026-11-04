@@ -1,6 +1,6 @@
 # AI-Tools (Deutsch)
 
-**Ein Panel für Ihre gesamte AI-Toolchain.** AI-Tools sammelt die MCP-Server und Agent Skills aus den Konfigurationsdateien aller Ihrer AI-Coding-Clients in einer Desktop-Anwendung — finden, installieren, bearbeiten, debuggen, zurückrollen und synchronisieren, ohne je wieder von Hand JSON zu pflegen.
+**Ein Panel für Ihre gesamte AI-Toolchain.** AI-Tools sammelt die MCP-Server und Agent Skills aus den Konfigurationsdateien aller Ihrer AI-Coding-Clients in einer Desktop-Anwendung — finden, installieren, bearbeiten, debuggen und synchronisieren, ohne je wieder von Hand JSON zu pflegen.
 
 <p align="center">
   <a href="https://www.ywhome.top">Offizielle Website</a> ·
@@ -36,7 +36,7 @@
 | --- | --- |
 | Ein Server, sechs JSON-Dateien, sechs Schlüsselnamen | **Einmal schreiben, überall wirksam.** Die Konfiguration geht an alle gewählten Clients — jeweils in deren Dialekt: JSON / JSONC / TOML, `servers` statt `mcpServers`, `working_directory` statt `cwd`, `transport` statt `type`, `context_servers`, `mcp_servers`. |
 | Store-Listen, die erst mal laden | **Erster Screen sofort.** Scheiben-Cache + SWR: zuerst das Bild, die Aktualisierung läuft still im Hintergrund (Listen 1 h, Details 24 h), Zwangsupdates per Klick. |
-| „Macht mein Edit gerade den Client kaputt?" | **Jede Änderung ist rückholbar.** Installation, Deinstallation, Update, Sync und Edit werden automatisch gesichert; beliebigen Stand mit dem Ist-Zustand vergleichen (neu / entfernt / geändert, farblich) und mit einem Klick wiederherstellen. |
+| „Macht mein Edit gerade den Client kaputt?“ | **Jede Änderung wird gesichert.** Installation, Deinstallation, Update, Sync und Edit legen einen Schnappschuss in `~/.ai-tools/backups` ab (die letzten 50 bleiben erhalten); öffnen Sie ihn und sehen pro Client, was gegenüber dem aktuellen Stand hinzukam, wegfiel oder sich änderte — genau das korrigieren Sie. |
 | MCP-Debugging mit curl und Texteditor | **Inspector eingebaut.** stdio / streamable-http / sse, Tools / Resources / Prompts aufrufen, Parameter im Formular, Ergebnis mit JSON-Highlighting, Log in verschiebbarem Panel. |
 | Neuer Rechner, neue Einrichtung | **Ihre eigene Cloud, ein Klick zur Wiederherstellung.** Push auf Ihr eigenes Git (SSH-Key / HTTPS-Token / anonym) oder SFTP (Passwort / Key) mit Aufgaben-Warteschlange, Fortschritt und Retry — und explizitem Lokal-vs-Remote-Abgleich vor dem Überschreiben. |
 | Ein Config-Manager, der nach Hause telefoniert? | **Lokal zuerst.** Ohne eingerichtete Cloud-Synchronisation geht nichts nach draußen; Cache AES-256-GCM-verschlüsselt, Zugangsdaten nur als verschlüsselte SecretStore-Referenzen, externe Links auf http/https beschränkt. |
@@ -49,8 +49,8 @@
 - **MCP-Inspector** — eigene Befehle, Argumente, Umgebungsvariablen und Header; Tools / Resources / Prompts direkt aufrufen; Kindprozesse werden beim Beenden eingesammelt.
 - **Bibliothek** — alles Installierte an einem Ort: Befehl/Argumente/Env bearbeiten, mehrfach auswählen und synchronisieren, deinstallieren. Im Skills-Bereich SKILL.md online bearbeiten, Anhänge verwalten, `.zip` / `.skill` / Ordner / GitHub-Link / Drag-&-Drop importieren, mehrere als Zip exportieren, Konflikte vor dem Push klären.
 - **Cloud-Synchronisation** — Git oder SFTP, automatischer Pull beim Start, manueller Push, Aufgabenpanel mit Fortschritt und Retry, Konsistenzprüfung beider Seiten.
-- **Historie & Rückrollen** — Zeitstempel, Größe, betroffene Clients und Eintragszahlen; Versionsvergleich; Ein-Klick-Wiederherstellung; Historie komplett leeren.
-- **Laufzeit-Prüfung** — Node.js, Python und Git erkennen (Vorhandensein, Version, Pfad) und erklären „installiert, startet aber nicht".
+- **Historie** — automatische Sicherungen mit Zeit, Größe, betroffenen Clients und Eintragszahlen; „Änderungen ansehen“ vergleicht jeden Schnappschuss clientweise mit der aktuellen Konfiguration; Historie komplett leeren. Die Schnappschüsse liegen in `~/.ai-tools/backups`; einen Wiederherstellungs-Knopf gibt es noch nicht, Zurücksetzen ist Handarbeit.
+- **Laufzeit-Prüfung** — Node.js, Python und Git erkennen (Vorhandensein, Version, Pfad) und erklären „installiert, startet aber nicht“.
 - **Quellen & API-Tokens** — eingebaute und direkt angebundene Plattformen (Base URL + Token) gemeinsam verwalten, Verbindungstest gegen echte Plattform-Endpunkte, an/aus, Standard, Export; Token-Center mit Scopes und Ablaufdatum.
 - **Optik & 9 Sprachen** — hell / dunkel / System; English, 简体中文, العربية (RTL), Deutsch, Español, Français, Italiano, 日本語, Русский; Sprachpakete werden bei Bedarf geladen, Umschalten sofort.
 - **Sicherheit** — AES-256-GCM-Cache mit maschinenabhängigem Schlüssel, http/https-only-Links in Systembrowser, DNS-over-HTTPS, Einzelinstanz-Sperre, strikt getrennte Haupt-/Preload-/Renderer-Prozesse mit IPC-Allow-List.
@@ -86,7 +86,7 @@ Aktuell veröffentlichte Version: **1.1.1** (2026-11-02) — [Releases → neues
 
 Die Download-Seite der offiziellen Website ([www.ywhome.top/#product-ai-tools-download](https://www.ywhome.top/#product-ai-tools-download)) wird gerade plattformweise freigeschaltet; bis dahin ist dieses Repository der offizielle Bezugsweg.
 
-Die Builds sind derzeit **nicht signiert**: Windows SmartScreen → „Weitere Informationen → Trotzdem ausführen"; macOS bei damaged-Meldung `xattr -cr /Applications/AI-Tools.app`; AppImage zuerst `chmod +x`.
+Die Builds sind derzeit **nicht signiert**: Windows SmartScreen → „Weitere Informationen → Trotzdem ausführen“; macOS bei damaged-Meldung `xattr -cr /Applications/AI-Tools.app`; AppImage zuerst `chmod +x`.
 
 ## Automatische Aktualisierung
 
@@ -102,7 +102,7 @@ Lokal zuerst: AI-Tools liest und schreibt Konfigurationsdateien auf Ihrem Rechne
 2. Im **MCP-Store** suchen (oder in den **Skills**-Tab wechseln).
 3. **Installieren** klicken und Ziel-Clients wählen.
 4. Im Client sofort verwenden — ohne JSON-Kauerei.
-5. Bei Problemen im **Inspector** nachstellen, dann über die **Historie** zurückrollen.
+5. MCP-Fehler? Rufen Sie die Tools im **Inspector** auf und lesen Sie die echte Fehlermeldung. Kaputte Konfiguration? Öffnen Sie die nächstliegende Sicherung in der **Historie** und gleichen Sie ab, welche Einträge zurückgehören.
 6. Mehrere Rechner? **Einstellungen → Cloud-Sync** mit Git oder SFTP einrichten.
 
 ## Support

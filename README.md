@@ -1,6 +1,6 @@
 # AI-Tools
 
-**One panel for your whole AI toolchain.** AI-Tools brings every MCP server and Agent Skill from every AI coding client you use into one desktop app — discover it, install it, edit it, debug it, roll it back and sync it, without hand-editing another config file.
+**One panel for your whole AI toolchain.** AI-Tools brings every MCP server and Agent Skill from every AI coding client you use into one desktop app — discover it, install it, edit it, debug it and sync it, without hand-editing another config file.
 
 <p align="center">
   <a href="https://www.ywhome.top">Official website</a> ·
@@ -36,7 +36,7 @@
 | --- | --- |
 | One MCP server, six JSON files, six different key names | **Write once, deploy to many.** A single click fans the config out to every client you select, each in its own dialect — JSON / JSONC / TOML, `servers` vs `mcpServers`, `working_directory` vs `cwd`, `transport` vs `type`, `context_servers`, `mcp_servers`. |
 | Store pages that spin while you wait | **Instant first screen.** Disk-cached SWR lists render before the network answers and refresh silently in the background (list 1 h, detail 24 h), with a force-refresh whenever you ask. |
-| "Did that edit just break my client?" | **Every change is reversible.** Installs, uninstalls, updates, syncs and edits are backed up automatically; diff any snapshot against live state (added / removed / changed, colour-coded) and restore in one click. |
+| "Did that edit just break my client?" | **Every change is backed up.** Installs, uninstalls, updates, syncs and edits snapshot your configs to `~/.ai-tools/backups` (the last 50 are kept); open any snapshot to see, per client, exactly what was added, removed or changed against the live state — then correct what the diff points to. |
 | Debugging an MCP server with curl and a text editor | **Inspector built in.** Call Tools, Resources and Prompts over stdio / streamable-http / sse from a form, read highlighted JSON results, watch the process log in a resizable panel. |
 | Rebuilding your whole setup on a new machine | **Your own cloud, one-click restore.** Push MCP and Skills config to Git (SSH key / HTTPS token / anonymous) or SFTP (password / key) through a background task queue with live progress and retry, guarded by an explicit local-vs-remote consistency diff. |
 | Skills you can only touch from a terminal | **A real skills workflow.** Edit SKILL.md frontmatter and body in-app, manage attached files, import `.zip` / `.skill` / a folder / a pasted GitHub link / drag-and-drop, export several skills as one zip, with conflict detection before any cloud push. |
@@ -56,7 +56,7 @@
 
 **Cloud sync** — Git or SFTP to your own remote, automatic pull at startup, manual push, a task panel with progress and one-click retry, and a consistency check that shows both sides before anything is overwritten.
 
-**History & rollback** — timestamped backups showing size, clients and entry counts; version-to-version diff; one-click restore; full history clear.
+**History** — the Configuration history page keeps an automatic snapshot of every install, uninstall, update, sync and edit (the last 50, in `~/.ai-tools/backups`); **View Changes** diffs any snapshot against the current configuration, itemised per client, and Clear All empties the list. There is no restore button yet, so going back means applying what the diff shows by hand.
 
 **Runtime probes** — Node.js, Python and Git detection (presence, version, path) to answer "installed but it will not start".
 
@@ -114,7 +114,7 @@ Local-first: AI-Tools reads and writes config files on your machine and uploads 
 2. Browse or search the **MCP store** (or switch to the **Skills** tab).
 3. Click **Install** and pick one or more target clients.
 4. Use the capability in that client — no JSON copy-pasting.
-5. Something wrong? Reproduce it in **Inspector**, then roll back from **History**.
+5. MCP server misbehaving? Call its tools in **Inspector** and read the real error. Configuration broken? Open the nearest snapshot in **History**, press **View Changes**, and put back exactly what the diff lists as removed — or delete what it lists as added.
 6. Multiple machines? Configure Git or SFTP in **Settings → Cloud sync**.
 
 ## Support
