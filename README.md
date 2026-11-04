@@ -22,7 +22,7 @@
 </p>
 
 > **This repository** is the official release-artifact feed for AI-Tools: installers for Windows / macOS / Linux plus the update manifests the app reads for in-app auto-update. It contains no source code.
-> **Product tour, feature list and licence purchase: <https://www.ywhome.top>**
+> **Product tour and feature list: <https://www.ywhome.top>**
 
 ---
 
@@ -41,7 +41,6 @@
 | Rebuilding your whole setup on a new machine | **Your own cloud, one-click restore.** Push MCP and Skills config to Git (SSH key / HTTPS token / anonymous) or SFTP (password / key) through a background task queue with live progress and retry, guarded by an explicit local-vs-remote consistency diff. |
 | Skills you can only touch from a terminal | **A real skills workflow.** Edit SKILL.md frontmatter and body in-app, manage attached files, import `.zip` / `.skill` / a folder / a pasted GitHub link / drag-and-drop, export several skills as one zip, with conflict detection before any cloud push. |
 | A config manager that phones home | **Local-first by default.** Nothing leaves the machine until you configure cloud sync yourself; cache encrypted with AES-256-GCM, remote credentials kept only as encrypted SecretStore references, external links restricted to http/https. |
-| Paywall surprises after install | **No feature hostage-taking.** Store, install, Inspector, library, history and multi-client sync all work without activation — only cloud sync is entitlement-gated, and a fresh install gets a 60-day trial. |
 
 ## Core features
 
@@ -104,14 +103,6 @@ Builds are currently **not code-signed**: Windows SmartScreen → "More info →
 ## In-app auto-update
 
 Installed builds check this repository on their own and update in place — no re-downloading. NSIS installs follow `latest.yml`, portable builds follow `portable.yml`, macOS follows `latest-mac.yml`, Linux follows `latest-linux.yml` / `latest-linux-arm64.yml`.
-
-## Licence, activation and ads
-
-AI-Tools is **proprietary software** (all rights reserved); portions inherited from the open-source mcp-dock project remain under its original MIT licence, reproduced in `THIRD_PARTY_LICENSES.md` shipped inside the app.
-
-Everything works without activation. **Only cloud sync is entitlement-gated:** a fresh install gets a 60-day trial, after which cloud sync pauses until you activate with a locally verified signed token that is re-checked online periodically. Purchase and activation entry points: <https://www.ywhome.top/#product-ai-tools-pricing>.
-
-Some distribution builds show ads until you activate; other builds are compiled without any ads. That is a packaging variant, not a feature cut — store and library capabilities are identical.
 
 ## Privacy and data
 

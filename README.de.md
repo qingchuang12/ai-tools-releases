@@ -22,7 +22,7 @@
 </p>
 
 > **Dieses Repository** ist der offizielle Release-Speicher von AI-Tools: Installationspakete für Windows / macOS / Linux sowie die Update-Manifeste, aus denen sich die App automatisch aktualisiert. Es enthält kein Quellcode.
-> **Funktionsüberblick, unterstützte Clients und Lizenzkauf: <https://www.ywhome.top>**
+> **Funktionsüberblick und unterstützte Clients: <https://www.ywhome.top>**
 
 ---
 
@@ -39,8 +39,8 @@
 | „Macht mein Edit gerade den Client kaputt?" | **Jede Änderung ist rückholbar.** Installation, Deinstallation, Update, Sync und Edit werden automatisch gesichert; beliebigen Stand mit dem Ist-Zustand vergleichen (neu / entfernt / geändert, farblich) und mit einem Klick wiederherstellen. |
 | MCP-Debugging mit curl und Texteditor | **Inspector eingebaut.** stdio / streamable-http / sse, Tools / Resources / Prompts aufrufen, Parameter im Formular, Ergebnis mit JSON-Highlighting, Log in verschiebbarem Panel. |
 | Neuer Rechner, neue Einrichtung | **Ihre eigene Cloud, ein Klick zur Wiederherstellung.** Push auf Ihr eigenes Git (SSH-Key / HTTPS-Token / anonym) oder SFTP (Passwort / Key) mit Aufgaben-Warteschlange, Fortschritt und Retry — und explizitem Lokal-vs-Remote-Abgleich vor dem Überschreiben. |
+| Skills, die nur im Terminal funktionieren | **Ein richtiger Skill-Workflow.** SKILL.md im Programm bearbeiten, Anhänge verwalten, `.zip` / `.skill` / Ordner / GitHub-Link / Drag-&-Drop-Import, mehrere Skills als ein Zip exportieren, Konflikterkennung vor jedem Push. |
 | Ein Config-Manager, der nach Hause telefoniert? | **Lokal zuerst.** Ohne eingerichtete Cloud-Synchronisation geht nichts nach draußen; Cache AES-256-GCM-verschlüsselt, Zugangsdaten nur als verschlüsselte SecretStore-Referenzen, externe Links auf http/https beschränkt. |
-| Bezahlschranken nach der Installation | **Keine Funktion als Pfand.** Store, Installation, Inspector, Bibliothek, Historie und Client-Sync sind ohne Aktivierung vollständig nutzbar — nur die Cloud-Synchronisation ist lizenzgebunden, mit 60 Tagen Standard-Testzeitraum. |
 
 ## Kernfunktionen
 
@@ -92,14 +92,6 @@ Die Builds sind derzeit **nicht signiert**: Windows SmartScreen → „Weitere I
 ## Automatische Aktualisierung
 
 Installierte Ausgaben prüfen dieses Repository selbst und aktualisieren vor Ort. NSIS-Installationen folgen `latest.yml`, portable Ausgaben `portable.yml`, macOS `latest-mac.yml`, Linux `latest-linux.yml` / `latest-linux-arm64.yml`.
-
-## Lizenz, Aktivierung und Werbung
-
-AI-Tools ist **proprietäre Software** (alle Rechte vorbehalten); Anteile aus dem Open-Source-Projekt mcp-dock bleiben unter dessen MIT-Lizenz, vollständig abgedruckt in der mitgelieferten `THIRD_PARTY_LICENSES.md`.
-
-Alle Funktionen sind ohne Aktivierung nutzbar. **Nur die Cloud-Synchronisation ist lizenzgebunden** — 60 Tage Testzeitraum ab Installation, danach pausiert der Sync bis zur Aktivierung mittels lokal prüfbarem Signaturtoken, das regelmäßig online verifiziert wird. Kauf: <https://www.ywhome.top/#product-ai-tools-pricing>.
-
-Einige Vertriebsvarianten zeigen Werbung bis zur Aktivierung, andere sind compilierungsseitig werbefrei. Das ist eine Paketvariante, kein Funktionsabbau.
 
 ## Datenschutz und Daten
 

@@ -22,7 +22,7 @@
 </p>
 
 > **本仓库**是 AI-Tools 的官方发布产物仓：Windows / macOS / Linux 安装包，以及应用内在线更新所读取的更新清单。仓内不含源代码。
-> **产品导览、功能明细与授权购买：<https://www.ywhome.top>**
+> **产品导览与功能明细：<https://www.ywhome.top>**
 
 ---
 
@@ -41,7 +41,6 @@
 | 换台机器要重配一遍 | **云端在你手里，一键还原。** 配置推到你自己的 Git（SSH 私钥 / HTTPS Token / 匿名）或 SFTP（密码 / 私钥），后台任务队列带实时进度与重试，推送前先做本地与云端的逐条一致性比对。 |
 | Skills 只能靠命令行摆弄 | **完整的技能工作流。** 应用内在线编辑 SKILL.md 的 frontmatter 与正文、管理附属文件；导入 `.zip` / `.skill` / 已解压目录 / 粘贴 GitHub 链接 / 拖拽；多个技能一键打包导出；上云前自动冲突检测，可逐条选择覆盖或跳过。 |
 | 担心配置管理器偷偷上传 | **本地优先。** 不主动配置云同步就不上传任何东西；缓存 AES-256-GCM 加密，远端凭据只以加密引用（SecretStore）保存，外部链接仅允许 http/https。 |
-| 装完才发现处处收费 | **不拿功能当人质。** 商店、安装、Inspector、库编辑、历史回滚、多端同步全部无需激活即可使用；只有云端同步受权益门禁，新装默认 60 天试用。 |
 
 ## 核心功能
 
@@ -104,14 +103,6 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 ## 应用内在线更新
 
 已安装的应用会自行检查本仓并就地更新，无需重新下载：NSIS 安装包读 `latest.yml`，便携版读 `portable.yml`，macOS 读 `latest-mac.yml`，Linux 读 `latest-linux.yml` / `latest-linux-arm64.yml`。
-
-## 授权、激活与广告
-
-AI-Tools 为**专有软件**，保留所有权利；源自开源 mcp-dock 的部分仍遵循其原 MIT 条款，MIT 原文随应用分发于 `THIRD_PARTY_LICENSES.md`。
-
-所有功能无需激活即可使用，**仅云端同步受权益门禁**：新装默认 60 天试用，到期后云同步暂停，直至以本地验签的签名令牌完成激活；激活状态会定期联网复核。购买与激活入口：<https://www.ywhome.top/#product-ai-tools-pricing>。
-
-部分发行版本在激活前会展示广告，另一些版本编译期即不含广告——这是打包变体差异，不是功能阉割，商店与库能力完全一致。
 
 ## 隐私与数据
 
