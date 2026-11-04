@@ -22,7 +22,7 @@
 </p>
 
 > **Ce dépôt** est la source officielle des livrables AI-Tools : installateurs Windows / macOS / Linux et manifestes de mise à jour lus par l'application. Il ne contient pas de code source.
-> **Présentation des fonctions, clients pris en charge et achat de licence : <https://www.ywhome.top>**
+> **Présentation des fonctions et clients pris en charge : <https://www.ywhome.top>**
 
 ---
 
@@ -40,7 +40,6 @@
 | Déboguer un serveur MCP à coups de curl | **Inspecteur intégré.** stdio / streamable-http / sse, appel des Tools / Resources / Prompts depuis un formulaire, résultat en JSON coloré, journal dans un panneau redimensionnable. |
 | Tout reconstruire sur une nouvelle machine | **Votre propre cloud, restauration en un clic.** Push vers votre dépôt Git (clé SSH / jeton HTTPS / anonyme) ou votre SFTP (mot de passe / clé), avec file de tâches, progression et reprise, et comparaison explicite local-vers-remote avant écrasement. |
 | Un gestionnaire de configuration qui téléphone ? | **Local d'abord.** Rien ne sort tant que vous n'avez pas configuré la synchronisation ; cache chiffré AES-256-GCM, identifiants conservés uniquement comme références chiffrées SecretStore, liens externes limités à http/https. |
-| Des murs payants découverts après installation | **Aucune fonction prise en otage.** Store, installation, inspecteur, bibliothèque, historique et synchronisation multi-clients fonctionnent sans activation — seule la synchronisation cloud exige une licence, avec 60 jours d'essai par défaut. |
 
 ## Fonctions clés
 
@@ -92,14 +91,6 @@ Les builds ne sont **pas encore signés** : SmartScreen Windows → « Plus d'in
 ## Mise à jour automatique
 
 Les installations vérifient ce dépôt seules et se mettent à jour en place. Les installs NSIS suivent `latest.yml`, les portables `portable.yml`, macOS `latest-mac.yml`, Linux `latest-linux.yml` / `latest-linux-arm64.yml`.
-
-## Licence, activation et publicité
-
-AI-Tools est un **logiciel propriétaire** (tous droits réservés) ; les parties issues du projet open source mcp-dock restent sous sa licence MIT, reproduite dans le fichier `THIRD_PARTY_LICENSES.md` livré avec l'application.
-
-Tout est utilisable sans activation. **Seule la synchronisation cloud est soumise à licence** : 60 jours d'essai par défaut, puis pause jusqu'à activation par jeton signé vérifié localement et recontrôlé en ligne périodiquement. Achat : <https://www.ywhome.top/#product-ai-tools-pricing>.
-
-Certaines variantes de distribution affichent des publicités avant activation ; d'autres sont compilées sans publicité. C'est une variante de packaging, pas une coupe fonctionnelle.
 
 ## Confidentialité et données
 

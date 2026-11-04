@@ -22,7 +22,7 @@
 </p>
 
 > **Este repositorio** es el canal oficial de publicación de AI-Tools: instaladores para Windows / macOS / Linux y los manifiestos que la aplicación lee para actualizarse sola. No contiene código fuente.
-> **Recorrido de funciones, clientes compatibles y compra de licencia: <https://www.ywhome.top>**
+> **Recorrido de funciones y clientes compatibles: <https://www.ywhome.top>**
 
 ---
 
@@ -40,7 +40,6 @@
 | Depurar un servidor MCP con curl | **Inspector integrado.** stdio / streamable-http / sse, llamar Tools / Resources / Prompts desde un formulario, resultado con resaltado JSON y registro en panel redimensionable. |
 | Rehacer toda la configuración en otra máquina | **Tu propia nube, restaurar en un clic.** Envía a tu repositorio Git (clave SSH / token HTTPS / anónimo) o a tu SFTP (contraseña / clave) con cola de tareas, progreso y reintento, y una comparación explícita local-contra-remoto antes de sobrescribir. |
 | Un gestor de configuración que telefonea a casa | **Local por defecto.** Nada sale del equipo hasta que configuras la sincronización; caché cifrada AES-256-GCM, credenciales guardadas solo como referencias cifradas SecretStore y enlaces externos limitados a http/https. |
-| Muros de pago descubiertos tras instalar | **Ninguna función como rehén.** Tienda, instalación, inspector, biblioteca, historial y sincronización multi-cliente funcionan sin activación; solo la sincronización en la nube requiere licencia, con 60 días de prueba por defecto. |
 
 ## Funciones principales
 
@@ -92,14 +91,6 @@ Las compilaciones aún **no están firmadas**: en Windows, SmartScreen → «Má
 ## Actualización automática
 
 Las instalaciones comprueban este repositorio por su cuenta y se actualizan en el sitio. Las NSIS siguen `latest.yml`, las portables `portable.yml`, macOS `latest-mac.yml` y Linux `latest-linux.yml` / `latest-linux-arm64.yml`.
-
-## Licencia, activación y anuncios
-
-AI-Tools es **software propietario** (todos los derechos reservados); las partes procedentes del proyecto de código abierto mcp-dock mantienen su licencia MIT, reproducida en el fichero `THIRD_PARTY_LICENSES.md` que se distribuye con la aplicación.
-
-Todo funciona sin activar. **Solo la sincronización en la nube está limitada por licencia**: 60 días de prueba desde la instalación, después se pausa hasta activar con un token firmado verificable en local y revalidado en línea periódicamente. Compra: <https://www.ywhome.top/#product-ai-tools-pricing>.
-
-Algunas variantes de distribución muestran anuncios hasta activar; otras se compilan sin ningún anuncio. Es una variante de empaquetado, no un recorte de funciones.
 
 ## Privacidad y datos
 

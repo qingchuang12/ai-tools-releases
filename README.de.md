@@ -39,7 +39,6 @@
 | „Macht mein Edit gerade den Client kaputt?" | **Jede Änderung ist rückholbar.** Installation, Deinstallation, Update, Sync und Edit werden automatisch gesichert; beliebigen Stand mit dem Ist-Zustand vergleichen (neu / entfernt / geändert, farblich) und mit einem Klick wiederherstellen. |
 | MCP-Debugging mit curl und Texteditor | **Inspector eingebaut.** stdio / streamable-http / sse, Tools / Resources / Prompts aufrufen, Parameter im Formular, Ergebnis mit JSON-Highlighting, Log in verschiebbarem Panel. |
 | Neuer Rechner, neue Einrichtung | **Ihre eigene Cloud, ein Klick zur Wiederherstellung.** Push auf Ihr eigenes Git (SSH-Key / HTTPS-Token / anonym) oder SFTP (Passwort / Key) mit Aufgaben-Warteschlange, Fortschritt und Retry — und explizitem Lokal-vs-Remote-Abgleich vor dem Überschreiben. |
-| Skills, die nur im Terminal funktionieren | **Ein richtiger Skill-Workflow.** SKILL.md im Programm bearbeiten, Anhänge verwalten, `.zip` / `.skill` / Ordner / GitHub-Link / Drag-&-Drop-Import, mehrere Skills als ein Zip exportieren, Konflikterkennung vor jedem Push. |
 | Ein Config-Manager, der nach Hause telefoniert? | **Lokal zuerst.** Ohne eingerichtete Cloud-Synchronisation geht nichts nach draußen; Cache AES-256-GCM-verschlüsselt, Zugangsdaten nur als verschlüsselte SecretStore-Referenzen, externe Links auf http/https beschränkt. |
 
 ## Kernfunktionen
