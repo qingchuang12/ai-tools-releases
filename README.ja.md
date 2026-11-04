@@ -1,6 +1,6 @@
 # AI-Tools（日本語）
 
-**一つのパネルで、AI ツールチェーン全体をまとめて管理。** AI-Tools は各 AI コーディングクライアントの設定ファイルに分散している MCP サーバーと Agent Skills を一つのデスクトップアプリに集約します。検索・インストール・編集・デバッグ・バックアップ・クラウド同期をまとめて行えます。
+**一つのパネルで、AI ツールチェーン全体をまとめて管理。** AI-Tools は各 AI コーディングクライアントの設定ファイルに分散している MCP サーバーと Agent Skills を一つのデスクトップアプリに集約します。検索・インストール・編集・デバッグ・ロールバック・同期まで、JSON を手で触ることなく完了します。
 
 <p align="center">
   <a href="https://www.ywhome.top">公式サイト</a> ·
@@ -44,14 +44,14 @@
 ## 主要機能
 
 - **MCP ストア** — Smithery、npm レジストリ、Alibaba Bailian オフライン索引（251 件・通信不要）、ModelScope、公式レジストリスナップショットを切り替え可能。カテゴリ・総件数・サーバー側ページネーション対応。
-- **Skills ストア** — `~/.agents/skills/` 規約に準拠。検索・カテゴリ（UI 言語に追従）・並び替え・ソース絞り込み・ページサイズ調整。インストール不可のクライアントでは理由を表示してボタンを無効化し、空壳ディレクトリを作りません。
+- **Skills ストア** — `~/.agents/skills/` 規約に準拠。検索・カテゴリ（UI 言語に追従）・並び替え・ソース絞り込み・ページサイズ調整。インストール不可のクライアントでは理由を表示してボタンを無効化し、空のディレクトリを作りません。
 - **ワンクリック配備** — 複数クライアント同時インストール、クライアント単位の削除・更新、手動編集のフラグ立てでストア更新からローカル調整を保護。
 - **MCP Inspector** — コマンド・引数・環境変数・ヘッダーを自由に指定し、Tools / Resources / Prompts を列挙して実行。子プロセスは終了時に回収されます。
 - **ライブラリ** — インストール済みの一括編集・一括同期・削除。Skills では SKILL.md のオンライン編集、同梱ファイル管理、`.zip` / `.skill` / フォルダー / GitHub リンク / ドラッグ&ドロップでの取り込み、複数まとめて zip 出力、クラウド衝突解決。
 - **クラウド同期** — 起動時の自動取得と手動送信をタスクパネルで管理、失敗時はワンクリック再試行、整合性チェックで誤上書きを防止。
 - **履歴とロールバック** — 日時・サイズ・対象クライアント・件数を表示、任意バージョンとの Diff、一発復元、全履歴の消去。
 - **実行環境チェック** — Node.js・Python・Git の有無、バージョン、パスを自動検出し「入っているのに動かない」を切り分けます。
-- **プラットフォームソースと API トークン** — 組み込み源と直結源を Base URL + トークンで一元管理。プラットフォーム実エンドポイントに基づく接続テスト、有効無効化・既定設定・エクスポート、スコープ付きトークンの発行 / 失効も可能。
+- **プラットフォームソースと API トークン** — 組み込み源と直結源を Base URL + トークンで一元管理。プラットフォーム実エンドポイントに基づく接続テスト、有効化・既定設定・エクスポート、スコープ付きトークンの発行 / 失効も可能。
 - **外観と 9 言語** — ライト / ダーク / システム追従、および English・简体中文・العربية（RTL）・Deutsch・Español・Français・Italiano・日本語・Русский。言語パックは必要時に読み込み、切替は即時です。
 - **セキュリティ** — AES-256-GCM キャッシュ、http/https のみの外部リンク、DNS-over-HTTPS、単一インスタンスロック、メイン / プリロード / レンダラーの完全分離と IPC 許可リスト。
 
@@ -80,7 +80,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 最新の公開版：**1.1.1**（2026-11-02）— [Releases 最新](https://github.com/qingchuang12/ai-tools-releases/releases/latest)
 
-- Windows — [AI-Tools-Setup-1.1.1.exe](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-Setup-1.1.1.exe) ／ [便携版 portable](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1-portable.exe)
+- Windows — [AI-Tools-Setup-1.1.1.exe](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-Setup-1.1.1.exe) ／ [ポータブル版](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1-portable.exe)
 - macOS — [dmg (Intel)](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1.dmg) ／ [dmg (Apple シリコン)](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1-arm64.dmg)
 - Linux — [AppImage (x64)](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/AI-Tools-1.1.1.AppImage) ／ [deb (amd64)](https://github.com/qingchuang12/ai-tools-releases/releases/download/1.1.1/ai-tools_1.1.1_amd64.deb)
 
@@ -94,7 +94,7 @@ https://github.com/qingchuang12/ai-tools-releases/releases/latest/download/lates
 
 ## プライバシーとデータ
 
-ローカルファースト：アプリは本机の設定ファイルのみを操作し、クラウド同期を設定するまで何も送信しません。データは `~/.ai-tools/`（macOS / Linux）、`%USERPROFILE%\.ai-tools\`（Windows）に保存され、キャッシュはマシン特徴から導出した鍵で AES-256-GCM 暗号化されます。利用規約：<https://www.ywhome.top/legal/terms.html> · プライバシー：<https://www.ywhome.top/legal/privacy.html>
+ローカルファースト：アプリはこのマシンの設定ファイルのみを操作し、クラウド同期を設定するまで何も送信しません。データは `~/.ai-tools/`（macOS / Linux）、`%USERPROFILE%\.ai-tools\`（Windows）に保存され、キャッシュはマシン特徴から導出した鍵で AES-256-GCM 暗号化されます。利用規約：<https://www.ywhome.top/legal/terms.html> · プライバシー：<https://www.ywhome.top/legal/privacy.html>
 
 ## 使い方
 
