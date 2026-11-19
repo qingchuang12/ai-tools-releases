@@ -1,148 +1,98 @@
-# Reference snapshot of the snap descriptor used for ywhome-ai-tools.
-# The canonical source is package.json -> build.snap; electron-builder generates
-# this descriptor at build time from its snap template. Checked in so snap
-# reviewers can inspect confinement, base, staged libraries and app command.
+name: ywhome-ai-tools
+version: '1.1.15'
+title: AI-Tools
+summary: Manage MCP servers and AI agent skills for 36 AI clients
+description: |
+  AI-Tools is a desktop app for managing MCP servers and AI agent skills in
+  one place. It supports 36 AI clients and provides browsing, search,
+  installation, debugging, backup, multi-device sync, and cloud sync.
+
 base: core22
-grade: stable
 confinement: classic
+grade: stable
+compression: xz
+architectures:
+  - amd64
+
+icon: snap/gui/icon.png
+
+apps:
+  ywhome-ai-tools:
+    # Wrapper keeps classic-snap runtime sane: TMPDIR under $XDG_DATA_HOME and
+    # Chromium's --no-sandbox (no setuid helper is shipped).
+    command: bin/ai-tools-wrapper
+    desktop: snap/gui/ywhome-ai-tools.desktop
+
 parts:
-  launch-scripts:
-    plugin: dump
-    source: scripts
-  gnome-platform-empty-dirs:
-    plugin: nil
-    override-build: |
-      mkdir -p "$SNAPCRAFT_PART_INSTALL/data-dir/themes"
-      mkdir -p "$SNAPCRAFT_PART_INSTALL/data-dir/icons"
-      mkdir -p "$SNAPCRAFT_PART_INSTALL/data-dir/sounds"
-      mkdir "$SNAPCRAFT_PART_INSTALL/gnome-platform"
-  app-files:
-    plugin: dump
-    source: app
-    organize:
-      '*': app/
-    stage:
-      - '-app/chrome-sandbox'
-      - '-LICENSES.chromium.html'
+  # The payload is the linux-unpacked directory produced by
+  # `ow-electron-builder --linux dir` (release:snap script). Snapcraft patches
+  # every ELF (RPATH/interpreter) during stage/prime, so the classic snap
+  # loads libraries from itself or the core22 base instead of the host.
   app:
-    plugin: nil
-    stage:
-      - '-usr/lib/python*'
-      - '-usr/bin/python*'
-      - '-var/lib/ucf'
-      - '-usr/include'
-      - '-usr/lib/X11'
-      - '-usr/share'
-      - '-usr/sbin'
-      - '-usr/bin'
-      - '-usr/lib/*/libicudata.*'
-      - '-usr/lib/*/libicui18n.*'
-      - '-usr/lib/*/libgtk-*'
-      - '-usr/lib/*/libgdk-*'
-      - '-usr/lib/*/glib-*'
-      - '-usr/lib/*/gtk-*'
-      - '-usr/lib/*/gdk-*'
-      - '-usr/lib/*/krb5'
-      - '-usr/lib/systemd'
-      - '-usr/lib/glib-networking'
-      - '-usr/lib/dconf'
-      - '-usr/lib/*/avahi'
-      - '-usr/lib/*/gio'
-      - '-usr/lib/*/libatk*'
-      - '-usr/lib/*/libatspi*'
-      - '-usr/lib/*/libavahi*'
-      - '-usr/lib/*/libcairo*'
-      - '-usr/lib/*/libcolordprivate*'
-      - '-usr/lib/*/libcolord*'
-      - '-usr/lib/*/libcroco*'
-      - '-usr/lib/*/libcups*'
-      - '-usr/lib/*/libdatrie*'
-      - '-usr/lib/*/libdconf*'
-      - '-usr/lib/*/libepoxy*'
-      - '-usr/lib/*/libexpatw*'
-      - '-usr/lib/*/libffi*'
-      - '-usr/lib/*/libfontconfig*'
-      - '-usr/lib/*/libfreetype*'
-      - '-usr/lib/*/libgdk_pixbuf*'
-      - '-usr/lib/*/libgdk_pixbuf_xlib*'
-      - '-usr/lib/*/libgio*'
-      - '-usr/lib/*/libglib*'
-      - '-usr/lib/*/libgmodule*'
-      - '-usr/lib/*/libgmp*'
-      - '-usr/lib/*/libgnutls*'
-      - '-usr/lib/*/libgobject*'
-      - '-usr/lib/*/libgraphite2*'
-      - '-usr/lib/*/libgssapi_krb5*'
-      - '-usr/lib/*/libgthread*'
-      - '-usr/lib/*/libharfbuzz*'
-      - '-usr/lib/*/libhogweed*'
-      - '-usr/lib/*/libicuio*'
-      - '-usr/lib/*/libicutest*'
-      - '-usr/lib/*/libicutu*'
-      - '-usr/lib/*/libicuuc*'
-      - '-usr/lib/*/libidn2*'
-      - '-usr/lib/*/libjbig*'
-      - '-usr/lib/*/libjpeg*'
-      - '-usr/lib/*/libjson*'
-      - '-usr/lib/*/libk5crypto*'
-      - '-usr/lib/*/libkrb5*'
-      - '-usr/lib/*/libkrb5support*'
-      - '-usr/lib/*/liblcms2*'
-      - '-usr/lib/*/libnettle*'
-      - '-usr/lib/*/libp11*'
-      - '-usr/lib/*/libpango*'
-      - '-usr/lib/*/libpangocairo*'
-      - '-usr/lib/*/libpangoft2*'
-      - '-usr/lib/*/libpixman*'
-      - '-usr/lib/*/libpng16*'
-      - '-usr/lib/*/libproxy*'
-      - '-usr/lib/*/librest*'
-      - '-usr/lib/*/librsvg*'
-      - '-usr/lib/*/libsecret*'
-      - '-usr/lib/*/libsoup*'
-      - '-usr/lib/*/libsqlite3*'
-      - '-usr/lib/*/libtasn1*'
-      - '-usr/lib/*/libthai*'
-      - '-usr/lib/*/libtiff*'
-      - '-usr/lib/*/libunistring*'
-      - '-usr/lib/*/libwayland*'
-      - '-usr/lib/*/libX11*'
-      - '-usr/lib/*/libXau*'
-      - '-usr/lib/*/libxcb.so*'
-      - '-usr/lib/*/libxcb-dri2*'
-      - '-usr/lib/*/libxcb-dri3*'
-      - '-usr/lib/*/libxcb-glx*'
-      - '-usr/lib/*/libxcb-present*'
-      - '-usr/lib/*/libxcb-render*'
-      - '-usr/lib/*/libxcb-shm*'
-      - '-usr/lib/*/libxcb-sync*'
-      - '-usr/lib/*/libxcb-xfixes*'
-      - '-usr/lib/*/libXcomposite*'
-      - '-usr/lib/*/libXcursor*'
-      - '-usr/lib/*/libXdamage*'
-      - '-usr/lib/*/libXdmcp*'
-      - '-usr/lib/*/libXext*'
-      - '-usr/lib/*/libXfixes*'
-      - '-usr/lib/*/libXinerama*'
-      - '-usr/lib/*/libXi*'
-      - '-usr/lib/*/libxkbcommon*'
-      - '-usr/lib/*/libxml2*'
-      - '-usr/lib/*/libXrandr*'
-      - '-usr/lib/*/libXrender*'
+    plugin: dump
+    source: linux-unpacked
+    build-packages:
+      - patchelf
     stage-packages:
+      # Electron runtime dependencies pulled from the Ubuntu 22.04 archive so
+      # they are shipped inside the snap and matched against the core22 base.
       - libnspr4
       - libnss3
       - libxss1
       - libappindicator3-1
       - libsecret-1-0
-compression: xz
-name: ywhome-ai-tools
-version: '1.1.14'
-title: AI-Tools
-summary: Manage MCP servers and AI agent skills for 36 AI clients
-description: AI-Tools is a desktop app for managing MCP servers and AI agent skills in one place. It supports 36 AI clients and provides browsing, search, installation, debugging, backup, multi-device sync, and cloud sync.
-architectures:
-  - amd64
-apps:
-  ywhome-ai-tools:
-    command: command.sh
+      - libgtk-3-0
+      - libasound2
+      - libgbm1
+      - libdrm2
+      - libx11-xcb1
+      - libxcomposite1
+      - libxdamage1
+      - libxrandr2
+      - libxtst6
+      - libatk1.0-0
+      - libatk-bridge2.0-0
+      - libcups2
+      - libpangocairo-1.0-0
+      - libatspi2.0-0
+      - xdg-utils
+    prime:
+      - -chrome-sandbox
+      - -LICENSES.chromium.html
+    # Classic snaps must load libraries from themselves or the core22 base,
+    # never from the host. snapcraft's classic linter enforces this by
+    # requiring every ELF to carry RPATH/RUNPATH and the base's interpreter.
+    # The dump plugin alone does not patch payload binaries, so we run
+    # patchelf explicitly over every ELF in the primed tree.
+    override-prime: |
+      craftctl default
+      BASE_LIB="/snap/core22/current/lib/x86_64-linux-gnu"
+      BASE_INTERP="/snap/core22/current/lib64/ld-linux-x86-64.so.2"
+      BUNDLED="$CRAFT_PRIME/usr/lib/x86_64-linux-gnu"
+      find "$CRAFT_PRIME" -type f -print0 | while IFS= read -r -d '' f; do
+        if head -c 4 "$f" 2>/dev/null | grep -q $'\x7fELF'; then
+          # Skip relocatable objects (.o) and non-executable .so stubs
+          # patchelf cannot rewrite safely.
+          if patchelf "$f" >/dev/null 2>&1; then
+            cur_interp="$(patchelf --print-interpreter "$f" 2>/dev/null || true)"
+            if [ -n "$cur_interp" ] && [ "$cur_interp" != "$BASE_INTERP" ]; then
+              patchelf --set-interpreter "$BASE_INTERP" "$f" || true
+            fi
+            # Point at the snap's bundled lib dir relative to THIS binary,
+            # plus the base as fallback: own dir, bundled, base, in order.
+            rel="$(realpath -m --relative-to="$(dirname "$f")" "$BUNDLED")"
+            want="\$ORIGIN:\$ORIGIN/${rel}:\$BASE_LIB"
+            cur_rpath="$(patchelf --print-rpath "$f" 2>/dev/null || true)"
+            if [ "$cur_rpath" != "$want" ]; then
+              patchelf --set-rpath "$want" "$f" || true
+            fi
+          fi
+        fi
+      done
+
+  # Launcher wrapper (snap/local/bin) organized into $SNAP/bin.
+  launcher:
+    plugin: dump
+    source: snap/local/bin
+    organize:
+      ai-tools-wrapper: bin/ai-tools-wrapper
