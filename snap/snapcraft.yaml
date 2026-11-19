@@ -81,7 +81,7 @@ parts:
             # Point at the snap's bundled lib dir relative to THIS binary,
             # plus the base as fallback: own dir, bundled, base, in order.
             rel="$(realpath -m --relative-to="$(dirname "$f")" "$BUNDLED")"
-            want="\$ORIGIN:\$ORIGIN/${rel}:\$BASE_LIB"
+            want="\$ORIGIN:\$ORIGIN/${rel}:$BASE_LIB"
             cur_rpath="$(patchelf --print-rpath "$f" 2>/dev/null || true)"
             if [ "$cur_rpath" != "$want" ]; then
               patchelf --set-rpath "$want" "$f" || true
